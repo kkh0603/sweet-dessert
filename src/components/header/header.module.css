@@ -1,0 +1,95 @@
+.header_area{
+  position: relative;
+}
+
+.shadow_bot_line{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.406);
+}
+
+.ico_gnb_area{
+  position: relative;
+  width: 1130px;
+  height: 160px;
+
+  padding: 0px;
+  margin: 0px auto;
+
+}
+
+.ico_box{
+  position: absolute;
+  width: 280px;
+  height: 120px;
+
+  top: 18px;
+  left: 28px;
+
+}
+
+.ico_img{
+  width: 150px;
+  
+  position: absolute;
+  top: -23px;
+  left: 8px;
+}
+
+.ico_name{
+  position: absolute;;
+  top: 20px;
+  left: 160px;
+
+  font-size: 35px;
+  line-height: 40px;
+  font-family: 'Dancing Script', cursive;
+
+  border-bottom: 4px solid gray;
+}
+
+.gnb_box{
+  position: absolute;;
+  width: 550px;
+  height: 52px;
+  
+  display: flex;
+  justify-content: center;
+  
+  top: 66px;
+  left: 320px;
+
+  border-bottom: 4px solid gray;
+}
+
+.gnb_itm{
+  float: left;
+  padding: 15px;
+  display: block;
+  transition: 0.5s;
+}
+
+.gnb_itm :hover{
+  scale: 1.2;
+  font-size: 33px;
+}
+
+
+li img{
+  width: 30px;
+  height: 30px;
+}
+
+li span{
+  font-size: 30px;
+}
+
+
+.lnb_area{
+  position: relative;
+  width: 1130px;
+  height: 40px;
+
+  margin: 0px auto;
+
+  /* background-color: silver; */
+}
+
