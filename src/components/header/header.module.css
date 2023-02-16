@@ -9,7 +9,7 @@
 .ico_gnb_area{
   position: relative;
   width: 1130px;
-  height: 160px;
+  height: 130px;
 
   padding: 0px;
   margin: 0px auto;
@@ -43,7 +43,7 @@
   line-height: 40px;
   font-family: 'Dancing Script', cursive;
 
-  border-bottom: 4px solid gray;
+  /* border-bottom: 4px solid gray; */
 }
 
 .gnb_box{
@@ -57,17 +57,17 @@
   top: 66px;
   left: 320px;
 
-  border-bottom: 4px solid gray;
+  /* border-bottom: 4px solid gray; */
 }
 
 .gnb_itm{
   float: left;
   padding: 15px;
   display: block;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
-.gnb_itm :hover{
+.gnb_itm:hover{
   scale: 1.2;
   font-size: 33px;
 }
@@ -90,6 +90,29 @@ li span{
 
   margin: 0px auto;
 
-  /* background-color: silver; */
+  background-color: silver;
 }
 
+.shop_sub_menu{
+  position: relative;
+  width: 135px;
+  
+  left: 470px;
+}
+
+.shop_sub_menu_list{
+  padding-top: 10px;
+  background-color: beige;
+}
+
+.shop_sub_menu_item{
+
+  
+  padding-left: 20px;
+
+  height: 30px;
+
+  flex-direction: row;
+  align-items: center;
+  
+}

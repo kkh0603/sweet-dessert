@@ -1,11 +1,15 @@
 import Styled from './header.module.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { useState } from 'react'
 
 export const Header = () => {
 
+  let [styleDP, setStyleDP] = useState({display : 'none'})
+
+
   let navigate = useNavigate();
+  
 
   return (
     <React.Fragment>
@@ -44,6 +48,13 @@ export const Header = () => {
           </div>
           <div className={Styled.shadow_bot_line}>
             <div className={Styled.lnb_area}>
+              <div className={Styled.shop_sub_menu}>
+                <ul className={Styled.shop_sub_menu_list}>
+                  <li className={Styled.shop_sub_menu_item}>- 푸딩</li>
+                  <li className={Styled.shop_sub_menu_item}>- 찹쌀젤라또</li>
+                  <li className={Styled.shop_sub_menu_item}>- 마카롱</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
