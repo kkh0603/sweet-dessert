@@ -116,3 +116,28 @@ li span{
   align-items: center;
   
 }
+
+
+.user_sub_menu{
+  position: absolute;
+  width: 135px;
+  top: 0px;
+  left: 730px;
+}
+
+.user_sub_menu_list{
+  padding-top: 10px;
+  background-color: beige;
+}
+
+.user_sub_menu_item{
+
+  
+  padding-left: 20px;
+
+  height: 30px;
+
+  flex-direction: row;
+  align-items: center;
+  
+}

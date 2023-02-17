@@ -55,6 +55,13 @@ export const Header = () => {
                   <li className={Styled.shop_sub_menu_item}>- 마카롱</li>
                 </ul>
               </div>
+              <div className={Styled.user_sub_menu}>
+                <ul className={Styled.user_sub_menu_list}>
+                  <li className={Styled.user_sub_menu_item}>- 내정보</li>
+                  <li className={Styled.user_sub_menu_item}>- 주문내역</li>
+                  <li className={Styled.user_sub_menu_item}>- 문의</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
