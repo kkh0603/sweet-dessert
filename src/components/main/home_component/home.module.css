@@ -1,0 +1,33 @@
+
+.home_contents{
+  position: relative;
+  width: 1130px;
+  margin: 0px auto;
+}
+
+
+.home_cnt_img{
+  position: relative;
+
+  width: 600px;
+  height: 600px;
+  background-color: aquamarine;
+  margin: 0px auto;
+
+  top: 100px;
+}
+
+.market_info{
+  position: relative;
+  display: block;
+
+  width: 800px;
+  height: 150px;
+  
+  top: 200px;
+
+  margin: 0px auto;
+  padding: 0px;
+
+  background-color: olive;
+}

@@ -2,28 +2,23 @@ import Styled from './header.module.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
+import { Logo } from './logo_component/Logo';
 
 export const Header = () => {
 
-  let [styleDP, setStyleDP] = useState({display : 'none'})
 
+  let [shopMenu] = useState(['전체', '푸딩', '찹쌀젤라또', '마카롱'])
+  let [userMenu] = useState(['전체', '내정보 설정', '주문내역', '문의'])
 
   let navigate = useNavigate();
   
-
   return (
     <React.Fragment>
       <header>
         <div className={Styled.header_area}>
           <div className={Styled.shadow_bot_line}>
             <div className={Styled.ico_gnb_area}>
-              <div className={Styled.ico_box} onClick={()=>{navigate('/')}}>
-                <img 
-                  src={process.env.PUBLIC_URL + '/Pudding.png'} 
-                  alt='logo' 
-                  className={Styled.ico_img}/>
-                <p className={Styled.ico_name}>Sweet<br/>Dessert</p>
-              </div>
+              <Logo/>
               <div className={Styled.gnb_box}>
                 <ul className={Styled.gnb_list}>
                   <li className={Styled.gnb_itm} onClick={()=>{navigate('/')}}>
@@ -48,18 +43,29 @@ export const Header = () => {
           </div>
           <div className={Styled.shadow_bot_line}>
             <div className={Styled.lnb_area}>
+              <div className={Styled.menu_path}>
+                
+              </div>
               <div className={Styled.shop_sub_menu}>
                 <ul className={Styled.shop_sub_menu_list}>
-                  <li className={Styled.shop_sub_menu_item}>- 푸딩</li>
-                  <li className={Styled.shop_sub_menu_item}>- 찹쌀젤라또</li>
-                  <li className={Styled.shop_sub_menu_item}>- 마카롱</li>
+                  {
+                    shopMenu.map((a)=> {
+                      return (
+                        <li key={a} className={Styled.shop_sub_menu_item}>- {a}</li>
+                      )
+                    })
+                  }
                 </ul>
               </div>
               <div className={Styled.user_sub_menu}>
                 <ul className={Styled.user_sub_menu_list}>
-                  <li className={Styled.user_sub_menu_item}>- 내정보</li>
-                  <li className={Styled.user_sub_menu_item}>- 주문내역</li>
-                  <li className={Styled.user_sub_menu_item}>- 문의</li>
+                  {
+                    userMenu.map((a)=> {
+                      return (
+                        <li key={a} className={Styled.shop_sub_menu_item}>- {a}</li>
+                      )
+                    })
+                  }
                 </ul>
               </div>
             </div>

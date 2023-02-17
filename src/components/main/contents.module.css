@@ -1,0 +1,10 @@
+.main{
+  position: relative;
+  width: 100%;
+}
+
+.main_contents{
+  width: 1130px;
+  margin: 0px auto;
+  display: block;
+}
