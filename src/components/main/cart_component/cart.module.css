@@ -1,0 +1,43 @@
+.cart_contents{
+  position: relative;
+}
+
+.cart_table_area{
+  width: 1130px;
+  height: 800px;
+  position: absolute;
+  top: 100px;
+
+  overflow: scroll;
+
+  margin: 0px auto;
+  
+  border-bottom: 1px solid rgba(128, 128, 128, 0.406);
+}
+
+
+.cart_item_img{
+  width: 150px;
+}
+
+.table_body_item{
+  display: flex;
+}
+
+.table_body_amount{
+  display: table;
+}
+
+.cart_table{
+  width: 900px;
+  margin: 5px auto;
+}
+
+thead{
+  height: 30px;
+  display: none;
+}
+
+tr{
+  border: 1px solid rgba(255, 255, 255, 0);
+}
