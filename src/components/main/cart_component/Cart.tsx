@@ -48,8 +48,17 @@ export const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className={Styled.totoal_area}>
-
+        <div className={Styled.cart_sticky_area}>
+          <div className={Styled.cart_bot_content}>
+            <div className={Styled.cart_bot_total}>
+              <p>
+                Total ₩ 1,000,000
+              </p>
+            </div>
+            <div className={Styled.cart_bot_payment}>
+              <button >주문</button>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>

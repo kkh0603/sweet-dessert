@@ -74,6 +74,7 @@ li span{
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: beige;
+  display: none;
 }
 
 .shop_sub_menu_item{
@@ -101,6 +102,7 @@ li span{
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: beige;
+  display: none;
 }
 
 .user_sub_menu_item{

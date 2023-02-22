@@ -4,8 +4,8 @@
 
 .cart_table_area{
   width: 1130px;
-  height: 800px;
-  position: absolute;
+  height: 500px;
+  position: relative;
   top: 100px;
 
   overflow: scroll;
@@ -43,4 +43,24 @@ tbody tr{
   border-radius: 30px;
   box-shadow: 0 0 0 1px #000;
   /* border-style: hidden; */
+}
+
+.cart_sticky_area{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.cart_bot_content {
+
+  position: relative;
+  height: 100px;
+  
+  background-color: green;
+}
+
+.cart_bot_content{
+  margin: 0px auto;
+  width: 900px;
+  
 }

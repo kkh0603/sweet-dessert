@@ -8,13 +8,17 @@
 
 .home_cnt_img{
   position: relative;
-
-  width: 600px;
-  height: 600px;
-  background-color: aquamarine;
+  top: 50px;
+  width: 800px;
   margin: 0px auto;
 
-  top: 100px;
+}
+
+.home_main_image{
+  border-radius: 10px;
+  display:block;
+  width:100%;
+  height:auto;
 }
 
 .market_info{
@@ -22,12 +26,14 @@
   display: block;
 
   width: 800px;
-  height: 150px;
-  
-  top: 200px;
-
+  top: 100px;
   margin: 0px auto;
   padding: 0px;
 
-  background-color: olive;
+  padding: 10px 0px;
+  text-align: center;
+
+  background-color: rgba(83, 83, 83, 0.576);
+  border-radius: 10px;
+  color: white;
 }
