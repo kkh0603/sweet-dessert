@@ -5,9 +5,8 @@ import { Home } from './home_component/Home';
 import { Shop } from './shop_component/Shop';
 import { Cart } from './cart_component/Cart';
 
-
 export const Contents = () => {
-
+  
   return(
     <React.Fragment>
       <main>

@@ -1,30 +1,36 @@
 /* eslint-disable */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface OperatePath {
-  point : string,
-  path : Array<string>
+interface operateType {
+  path : string,
+  displayPath : string[],
+  navbarBtn : boolean,
+  indexNo : number,
 }
 
-const initialState : OperatePath = {
-  point : "",
-  path : []
+const initialOperatePathSlice : operateType= {
+  path : '', 
+  displayPath : [],
+  navbarBtn : false,
+  indexNo : 0,
 }
 
-export const operatePathSlice = createSlice({
+const operatePathSlice = createSlice({
   name: 'operatePath',
-  // initialState : {
-  //   menu : "",
-  //   path : []
-  // },
-  initialState,
+  initialState: initialOperatePathSlice,
   reducers : {
-    addMenu : (state) => {
-      state.path.push(state.point)
-    }
-  },
+    
+    menuSelect (state, action : PayloadAction<string>){
+      state.path = action.payload
+      state.path = ''
+    },
+
+    
+
+
+    
+  }
 })
 
-export const { addMenu } = operatePathSlice.actions
-
+export const {  } = operatePathSlice.actions
 export default operatePathSlice.reducer

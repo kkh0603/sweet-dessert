@@ -6,13 +6,13 @@ import { Header } from './components/header/Header';
 import { Contents } from './components/main/Contents';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from './states/store';
-import { addMenu } from './states/store_component/operate';
+import { RootState} from './states/store';
+import { Dispatch } from 'redux';
 
 function Wrap() {
 
-  const operate = useSelector((state: RootState) => state.operatePath.point)
-  const dispatch =  useDispatch();
+  const dispatch : Dispatch = useDispatch();
+  const topbarPath = useSelector( (state: RootState) => state.operatePath)
 
   return (
     <React.Fragment>
@@ -20,6 +20,8 @@ function Wrap() {
         <div id={Styled.Wrap}>
           <Header/>
           <Contents/>
+          <div>  </div>
+          <button>클릭</button>
         </div>
     </React.Fragment>
   );
