@@ -8,7 +8,7 @@
 
 .ico_gnb_area{
   position: relative;
-  width: 1130px;
+  width: 900px;
   height: 130px;
 
   padding: 0px;
@@ -27,7 +27,6 @@
   top: 66px;
   left: 320px;
 
-  /* border-bottom: 4px solid gray; */
 }
 
 .gnb_itm{
@@ -50,70 +49,4 @@ li img{
 
 li span{
   font-size: 30px;
-}
-
-
-.lnb_area{
-  position: relative;
-  width: 1130px;
-  height: 40px;
-
-  margin: 0px auto;
-
-  background-color: silver;
-}
-
-.shop_sub_menu{
-  position: relative;
-  width: 135px;
-  
-  left: 470px;
-}
-
-.shop_sub_menu_list{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: beige;
-  display: none;
-}
-
-.shop_sub_menu_item{
-
-  
-  padding-left: 20px;
-
-  height: 30px;
-
-  flex-direction: row;
-  align-items: center;
-  display: flex;
-  vertical-align: middle;
-}
-
-
-.user_sub_menu{
-  position: absolute;
-  width: 135px;
-  top: 0px;
-  left: 730px;
-}
-
-.user_sub_menu_list{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: beige;
-  display: none;
-}
-
-.user_sub_menu_item{
-
-  
-  padding-left: 20px;
-
-  height: 30px;
-
-  flex-direction: row;
-  align-items: center;
-  display: flex;
-  vertical-align: middle;
 }

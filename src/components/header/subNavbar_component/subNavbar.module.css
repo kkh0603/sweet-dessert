@@ -1,0 +1,25 @@
+.lnb_box{
+  position: relative;
+  width: 900px;
+  height: 40px;
+  
+  margin: 0px auto;
+  
+  background-color: silver;
+}
+
+.lnb_area{
+  text-align: left;
+  line-height: 40px;
+}
+
+.path_root{
+  width: 30%;
+  padding-left: 5%;
+  display: inline-block;
+}
+
+.Sub_menu{
+  width: 65%;
+  display: inline-block;
+}

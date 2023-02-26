@@ -1,0 +1,88 @@
+.gnb_box{
+  width: 600px;
+  position: absolute;
+  top: 73px;
+  left: 300px;
+
+  text-align: center;
+}
+
+.gnb_box > .gnb_itm {
+  display: inline-block;
+}
+
+.gnb_list > .gnb_itm{
+  display: inline-block;
+}
+
+.containerBtn{
+  width: 135px;
+  display: block;
+  transition: 0.2s;
+  padding: 10px 0px;
+}
+
+.containerBtn:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+
+.gnb_itm:hover .shop_sub_menu{
+  display: block;
+}
+
+.shop_sub_menu{
+  width: 135px;
+  position: absolute;
+  text-align: left;
+  z-index: 999;
+
+  display: none;
+}
+
+.shop_sub_menu_list{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: white;
+}
+
+.shop_sub_menu_item{
+  padding: 5px 0px 5px 10px;
+  transition: 0.2s;
+}
+
+.shop_sub_menu_item:hover{
+  scale: 1.2;
+  transform-origin: left;
+  cursor: pointer;
+}
+
+.user_sub_menu{
+  width: 135px;
+  position: absolute;
+  text-align: left;
+  z-index: 999;
+
+  display: none;
+}
+
+.gnb_itm:hover .user_sub_menu{
+  display: block;
+}
+
+.user_sub_menu_list{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: white;
+}
+
+.user_sub_menu_item{
+  padding: 5px 0px 5px 10px;
+  transition: 0.2s;
+}
+
+.user_sub_menu_item:hover{
+  scale: 1.2;
+  transform-origin: left;
+  cursor: pointer;
+}
