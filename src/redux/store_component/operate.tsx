@@ -5,6 +5,7 @@ const initialOperatePathSlice = {
   mainPath : '', 
   subPath : '', 
   displayPath : ["",""],
+  resultPath : '',
   navbashopBtn : false,
   navbaUsertBtn : false,
   indexNo : 0,
@@ -27,7 +28,12 @@ const operatePathSlice = createSlice({
       if (state.displayPath[1] == ""){
         `${state.displayPath} `
       }
+    },
+
+    displayPath (state, action : PayloadAction<string>) {
+      state.resultPath = action.payload
     }
+
   }
 })
 
