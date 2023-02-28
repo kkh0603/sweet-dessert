@@ -5,6 +5,7 @@ const initialOperatePathSlice = {
   mainPath : '', 
   subPath : '', 
   displayPath : ["",""],
+  resultPath : '',
   navbashopBtn : false,
   navbaUsertBtn : false,
   indexNo : 0,
