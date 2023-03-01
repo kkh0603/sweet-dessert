@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export const Navbar = () => {
   
 
-  let [shopMenu] = useState(['전체', '푸딩', '찹쌀젤라또', '마카롱'])
+  let [shopMenu] = useState(['전체', '푸딩', '음료'])
   let [userMenu] = useState(['전체', '내정보 설정', '주문내역', '문의'])
 
   let navigate = useNavigate();
