@@ -12,7 +12,7 @@ const operatePathSlice = createSlice({
   reducers : {
     displayPath (state, action:PayloadAction<string>) {
       if (action.payload == '/'){
-        state.displayPath = ['']
+        state.displayPath = []
         state.displayPath.push('home');
       }
     }

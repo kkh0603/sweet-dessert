@@ -1,6 +1,6 @@
 .lnb_box{
   position: relative;
-  width: 900px;
+  width: 800px;
   height: 40px;
   
   margin: 0px auto;
@@ -16,7 +16,7 @@
   width: 30%;
   padding-left: 5%;
   display: inline-block;
-  color: rgb(189, 58, 58);
+  color: rgb(59, 110, 199);
 }
 
 .Sub_menu{

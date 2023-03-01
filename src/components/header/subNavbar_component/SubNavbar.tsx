@@ -7,7 +7,6 @@ import { RootState } from "../../../redux/store";
 export const SubNavbar = () => {
   
   let pagePath = useSelector((state:RootState) =>state.operatePath.displayPath)
-
   return (
     <React.Fragment>
       <div className={Styled.lnb_box}>

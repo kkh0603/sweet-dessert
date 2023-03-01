@@ -2,7 +2,7 @@
 import Styled from './navbar.module.css';
 import React from 'react';
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Location } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { displayPath } from '../../../redux/store_component/operate';
@@ -12,6 +12,8 @@ export const Navbar = () => {
 
   let [shopMenu] = useState(['전체', '푸딩', '찹쌀젤라또', '마카롱'])
   let [userMenu] = useState(['전체', '내정보 설정', '주문내역', '문의'])
+
+  const location = Location
 
   let navigate = useNavigate();
   let dispatch = useDispatch()
