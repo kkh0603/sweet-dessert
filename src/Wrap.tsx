@@ -13,8 +13,6 @@ function Wrap() {
         <div id={Styled.Wrap}>
           <Header/>
           <Contents/>
-          <div>  </div>
-          <button>클릭</button>
         </div>
     </React.Fragment>
   );

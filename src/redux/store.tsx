@@ -1,14 +1,12 @@
 /* eslint-disable */
 import { configureStore } from '@reduxjs/toolkit';
 import operateReducer from './store_component/operate'
-import testReducer from './store_component/test';
 
 
 
 export const store = configureStore ({
   reducer: { 
     operatePath : operateReducer,
-    test1 : testReducer
   }
 })
 
