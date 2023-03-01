@@ -13,7 +13,7 @@ export const SubNavbar = () => {
         <div className={Styled.lnb_area}>
           <div className={Styled.path_root}>
             <span>현재 페이지는 : </span>
-            <span>{pagePath}</span>
+            <span>{pagePath[0]}</span>
           </div>
           <div className={Styled.Sub_menu}>
             bbbbbb
