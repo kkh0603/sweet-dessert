@@ -4,6 +4,9 @@ import React from 'react';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { displayPath } from '../../../redux/store_component/operate';
+
 export const Navbar = () => {
   
 
@@ -11,13 +14,17 @@ export const Navbar = () => {
   let [userMenu] = useState(['전체', '내정보 설정', '주문내역', '문의'])
 
   let navigate = useNavigate();
+  let dispatch = useDispatch()
 
   return (
     <React.Fragment>
       <nav>
         <div className={Styled.gnb_box}>
           <ul className={Styled.gnb_list}>
-            <li className={Styled.gnb_itm} onClick={()=>{navigate('/')}}>
+            <li className={Styled.gnb_itm} onClick={()=>{
+                                            navigate('/');
+                                            dispatch(displayPath('/'))
+                                            }}>
               <div className={Styled.containerBtn}>
                 <img src={process.env.PUBLIC_URL + '/navicon/home.png'} alt='Home'/>
                 <span className='testSpan'>HOME</span>
