@@ -15,27 +15,9 @@ const operatePathSlice = createSlice({
   name: 'operatePath',
   initialState: initialOperatePathSlice,
   reducers : {
-    
-    mainMenu (state, action : PayloadAction<string>) {
-      state.mainPath = action.payload
-    },
-
-    subMenu (state, action : PayloadAction<string>) {
-      state.mainPath = action.payload
-    },
-
-    printPath (state, action : PayloadAction<string>) {
-      if (state.displayPath[1] == ""){
-        `${state.displayPath} `
-      }
-    },
-
-    displayPath (state, action : PayloadAction<string>) {
-      state.resultPath = action.payload
-    }
 
   }
 })
 
-export let { printPath } = operatePathSlice.actions
+export let {  } = operatePathSlice.actions
 export default operatePathSlice.reducer
