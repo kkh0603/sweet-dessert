@@ -7,12 +7,15 @@ import { RootState } from "../../../redux/store";
 export const SubNavbar = () => {
   
   let pagePath = useSelector((state:RootState) =>state.operatePath.displayPath)
+  if (pagePath[0] === '' ){
+    pagePath = ['home']
+  }
   return (
     <React.Fragment>
       <div className={Styled.lnb_box}>
         <div className={Styled.lnb_area}>
           <div className={Styled.path_root}>
-            <span>현재 페이지는 : </span>
+            <span>현재 페이지 : </span>
             <span>{pagePath[0]}</span>
           </div>
           <div className={Styled.Sub_menu}>
