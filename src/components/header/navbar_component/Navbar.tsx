@@ -27,7 +27,7 @@ export const Navbar = () => {
         <div className={Styled.gnb_box}>
           <ul className={Styled.gnb_list}>
             <li className={Styled.gnb_itm} onClick={()=>{
-                                            navigate('/');
+                                            navigate('/home');
                                             dispatch(displayPath('home'))
                                             }}>
               <div className={Styled.containerBtn}>
@@ -48,7 +48,10 @@ export const Navbar = () => {
                   {
                     shopMenu.map((a)=> {
                       return (
-                        <li key={a} className={Styled.shop_sub_menu_item}>- {a}</li>
+                        <li key={a} 
+                            className={Styled.shop_sub_menu_item} 
+                            onClick={()=>{navgate(`/shop/${a}`);
+                                          console.log(`/shop/${a}`)}}>- {a}</li>
                       )
                     })
                   }
