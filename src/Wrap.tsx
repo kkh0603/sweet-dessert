@@ -6,7 +6,6 @@ import { Contents } from './components/main/Contents';
 
 function Wrap() {
 
-
   return (
     <React.Fragment>
       <Reset/>

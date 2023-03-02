@@ -1,20 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Styled from './subNavbar.module.css'
-import { useLocation } from "react-router";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/store";
 
 export const SubNavbar = () => {
   
-  let readLocation = useLocation().pathname
-  
-  useEffect(()=>{
-  })
-
+  let pagePath = useSelector((state:RootState) =>state.operatePath.displayPath)
+  if (pagePath[0] === '' ){
+    pagePath = ['home']
+  }
   return (
     <React.Fragment>
-      <div className={Styled.lnb_box}>git
+      <div className={Styled.lnb_box}>
         <div className={Styled.lnb_area}>
-          <div onClick={()=>{}} className={Styled.path_root}>
-            {'aaaaas'}
+          <div className={Styled.path_root}>
+            <span>현재 페이지 : </span>
+            <span>{pagePath[0]}</span>
           </div>
           <div className={Styled.Sub_menu}>
             bbbbbb

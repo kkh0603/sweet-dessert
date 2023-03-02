@@ -1,11 +1,10 @@
 .lnb_box{
   position: relative;
-  width: 900px;
+  width: 800px;
   height: 40px;
   
   margin: 0px auto;
   
-  background-color: silver;
 }
 
 .lnb_area{
@@ -17,6 +16,7 @@
   width: 30%;
   padding-left: 5%;
   display: inline-block;
+  color: rgb(59, 110, 199);
 }
 
 .Sub_menu{

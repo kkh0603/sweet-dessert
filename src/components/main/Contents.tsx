@@ -5,8 +5,9 @@ import { Home } from './home_component/Home';
 import { Shop } from './shop_component/Shop';
 import { Cart } from './cart_component/Cart';
 
+
 export const Contents = () => {
-  
+
   return(
     <React.Fragment>
       <main>
@@ -15,11 +16,12 @@ export const Contents = () => {
         </div>
       </main>
         <Routes>
-          <Route path='/' element={<div className={Styled.main_contents}><Home/></div>}/>
-          <Route path="/shop" element={<div className={Styled.main_contents}><Shop/></div>}/> 
-            <Route path="/shop/pudding" element={<div className={Styled.main_contents}> 푸딩</div>}/> 
-            <Route path="/shop/gelato" element={<div className={Styled.main_contents}> 푸딩</div>}/> 
-            <Route path="/shop/macaroon" element={<div className={Styled.main_contents}> 푸딩</div>}/> 
+          <Route path='/home' element={<div className={Styled.main_contents}><Home/></div>}/>
+          <Route>
+            <Route path="/pudding" element={<Shop/>}/> 
+            <Route path="/gelato" element={<Shop/>}/> 
+            <Route path="/macaroon" element={<Shop/>}/> 
+          </Route>
           <Route path='/cart' element={<div className={Styled.main_contents}><Cart/></div>}/> 
           <Route path='/user' element={<div className={Styled.main_contents}>개인정보</div>}/> 
         </Routes>
