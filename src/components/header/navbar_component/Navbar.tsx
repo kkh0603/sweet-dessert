@@ -1,19 +1,22 @@
 /* eslint-disable */
 import Styled from './navbar.module.css';
-import React from 'react';
-import { useState } from 'react'
+import React, { useState, } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { displayPath } from '../../../redux/store_component/operate';
+import { RootState } from '../../../redux/store';
 
 export const Navbar = () => {
-  
+  const navgate = useNavigate()
 
-  let [shopMenu] = useState(['전체', '푸딩', '찹쌀젤라또', '마카롱'])
-  let [userMenu] = useState(['전체', '내정보 설정', '주문내역', '문의'])
+  React.useEffect(()=>{
+    navgate('/home')
+  },[])
 
-  const location = useLocation().pathname
+
+  const shopMenu = useSelector((state:RootState) => state.operatePath.shopMenu)
+  const userMenu = useSelector((state:RootState) => state.operatePath.userMenu)
 
   let navigate = useNavigate();
   let dispatch = useDispatch()
