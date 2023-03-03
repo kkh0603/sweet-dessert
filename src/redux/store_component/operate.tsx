@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialOperatePathSlice = {
   firstPath : '',
   secondPath : '',
-  shopMenu : ['All', 'Pudding', 'Macaroon','Gelato'],
+  orderMenu : ['All', 'Pudding', 'Macaroon','Gelato'],
   userMenu : ['My_information', 'Order_information', 'Customer_services'],
   displayPath : [''],
 }

@@ -27,11 +27,11 @@
   box-shadow: 3px 3px 3px 3px gray;
 }
 
-.gnb_itm:hover .shop_sub_menu{
+.gnb_itm:hover .order_sub_menu{
   display: block;
 }
 
-.shop_sub_menu{
+.order_sub_menu{
   width: 135px;
   position: absolute;
   text-align: left;
@@ -40,24 +40,24 @@
   display: none;
 }
 
-.containerBtn:hover .shop_sub_menu_list{
+.containerBtn:hover .order_sub_menu_list{
   box-shadow: 3px 3px 3px 3px gray;
 
 }
 
-.shop_sub_menu_list{
+.order_sub_menu_list{
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 3px 3px 3px 3px gray;
   background-color: white;
 }
 
-.shop_sub_menu_item{
+.order_sub_menu_item{
   padding: 5px 0px 5px 10px;
   transition: 0.2s;
 }
 
-.shop_sub_menu_item:hover{
+.order_sub_menu_item:hover{
   scale: 1.2;
   transform-origin: left;
   cursor: pointer;

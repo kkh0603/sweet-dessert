@@ -1,5 +1,5 @@
 
-.shop_contents{
+.order_contents{
   position: relative;
   width: 1130px;
   margin: 0px auto;
@@ -7,7 +7,7 @@
   background-color: gray;
 }
 
-.shop_items_list{
+.order_items_list{
 
   box-sizing: border-box;
   position: relative;
@@ -23,7 +23,7 @@
   top: 100px;
 }
 
-.shop_item{
+.order_item{
 
 
   border: 0px solid;
@@ -37,7 +37,7 @@
 }
 
 
-.shop_pagenation{
+.order_pagenation{
   position: relative;
   
   

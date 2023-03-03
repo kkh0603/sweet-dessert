@@ -15,7 +15,7 @@ export const Navbar = () => {
   },[])
 
 
-  const shopMenu = useSelector((state:RootState) => state.operatePath.shopMenu)
+  const orderMenu = useSelector((state:RootState) => state.operatePath.orderMenu)
   const userMenu = useSelector((state:RootState) => state.operatePath.userMenu)
 
   let navigate = useNavigate();
@@ -36,20 +36,20 @@ export const Navbar = () => {
               </div>
             </li>
             <li className={Styled.gnb_itm} onClick={()=>{
-                                            dispatch(displayPath('shop'))
+                                            dispatch(displayPath('order'))
                                             }}>
               <div className={Styled.containerBtn}>
-                <img src={process.env.PUBLIC_URL + '/navicon/shop.png'} alt='shop'/>
-                <span>SHOP</span>
+                <img src={process.env.PUBLIC_URL + '/navicon/order.png'} alt='oreder'/>
+                <span>ORDER</span>
               </div>
-              <div className={Styled.shop_sub_menu}>
-                <ul className={Styled.shop_sub_menu_list}>
+              <div className={Styled.order_sub_menu}>
+                <ul className={Styled.order_sub_menu_list}>
                   {
-                    shopMenu.map((a)=> {
+                    orderMenu.map((a)=> {
                       return (
                         <li key={a} 
-                            className={Styled.shop_sub_menu_item} 
-                            onClick={(e)=>{e.stopPropagation(); navgate('/shop/'+a)}}>{a}</li>
+                            className={Styled.order_sub_menu_item} 
+                            onClick={(e)=>{e.stopPropagation(); navgate('/order/'+a)}}>{a}</li>
                       )
                     })
                   }
@@ -78,7 +78,9 @@ export const Navbar = () => {
                   {
                     userMenu.map((a)=> {
                       return (
-                        <li key={a} className={Styled.user_sub_menu_item}>- {a}</li>
+                        <li key={a} 
+                            className={Styled.user_sub_menu_item}
+                            onClick={(e)=>{e.stopPropagation(); navgate('/user/'+a)}}>{a.replace('_',' ')}</li>
                       )
                     })
                   }
@@ -88,6 +90,7 @@ export const Navbar = () => {
           </ul>
         </div>
       </nav>
+      <Outlet></Outlet>
     </React.Fragment>
   )
 }
