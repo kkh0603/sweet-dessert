@@ -1,8 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import { RootState } from "../../../redux/store";
 import Styled from './shop.module.css'
 
 
 export const Shop = () => {
+  let shopCategory = useSelector((state:RootState)=>state.operatePath.shopMenu)
   return (
     <React.Fragment>
       <div className={Styled.shop_contents}>
@@ -20,6 +24,8 @@ export const Shop = () => {
           <div className={`${Styled.carousel} ${Styled.carousel_right}`}> {">"} </div>
         </div>
       </div>
+
+      
     </React.Fragment>
   )
 }
