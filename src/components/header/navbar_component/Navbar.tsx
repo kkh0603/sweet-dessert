@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Styled from './navbar.module.css';
 import React, { useState, } from 'react'
-import { useNavigate, useLocation, Outlet } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { displayPath } from '../../../redux/store_component/operate';
@@ -36,6 +36,7 @@ export const Navbar = () => {
               </div>
             </li>
             <li className={Styled.gnb_itm} onClick={()=>{
+                                            navigate('/order');
                                             dispatch(displayPath('order'))
                                             }}>
               <div className={Styled.containerBtn}>

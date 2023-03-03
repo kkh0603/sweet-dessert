@@ -18,7 +18,7 @@ const operatePathSlice = createSlice({
       state.displayPath.push(action.payload);
     },
     display (state, action:PayloadAction<string>) {
-      
+      console.log(1)
     }
   }
 })

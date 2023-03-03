@@ -1,5 +1,5 @@
 import React from "react"
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Outlet } from 'react-router-dom'
 import { Home } from '../components/main/home_component/Home';
 import { Order } from '../components/main/order_component/Order';
 import { Cart } from '../components/main/cart_component/Cart';
@@ -15,18 +15,21 @@ export const MainRoute = () =>{
     <React.Fragment>
       <Routes>
         <Route path='/home' element={<Home/>}/>
-        <Route path='/order/*'>
+        <Route path='/order/*' element={<React.Fragment>
+                                          <Outlet></Outlet>
+                                        </React.Fragment>}> 
           {
             orderCategory.map((a)=>{
               return (
                 <Route key={a} path={a} element={<Order/>}/>
-              )
-            })
-          }
-          
+                )
+              })
+            }
         </Route>
         <Route path='/cart' element={<Cart/>}/> 
-        <Route path='/user/*'>
+        <Route path='/user/*'element={<React.Fragment>
+                                          <Outlet></Outlet>
+                                        </React.Fragment>}>
           {
             userCategory.map((a)=>{
               return (
