@@ -10,7 +10,7 @@ export const Logo = () => {
 
   return (
     <React.Fragment>
-      <div className={Styled.ico_box} onClick={()=>{navigate('/')}}>
+      <div className={Styled.ico_box} onClick={()=>{navigate('/home')}}>
         <img 
           src={process.env.PUBLIC_URL + '/Pudding.png'} 
           alt='logo' 

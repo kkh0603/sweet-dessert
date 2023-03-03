@@ -49,7 +49,7 @@ export const Navbar = () => {
                       return (
                         <li key={a} 
                             className={Styled.shop_sub_menu_item} 
-                            onClick={()=>{navgate('/shop/'+a)}}>{a}</li>
+                            onClick={(e)=>{e.stopPropagation(); navgate('/shop/'+a)}}>{a}</li>
                       )
                     })
                   }

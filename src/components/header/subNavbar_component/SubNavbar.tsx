@@ -15,7 +15,7 @@ export const SubNavbar = () => {
       <div className={Styled.lnb_box}>
         <div className={Styled.lnb_area}>
           <div className={Styled.path_root}>
-            <span>현재 페이지 : </span>
+            <span>Path : </span>
             <span>{pagePath[0]}</span>
           </div>
           <div className={Styled.Sub_menu}>
