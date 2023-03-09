@@ -16,7 +16,6 @@ export const Navbar = () => {
 
 
   const orderMenu = useSelector((state:RootState) => state.operatePath.orderMenu)
-  const userMenu = useSelector((state:RootState) => state.operatePath.userMenu)
 
   let navigate = useNavigate();
   let dispatch = useDispatch()
@@ -36,7 +35,7 @@ export const Navbar = () => {
               </div>
             </li>
             <li className={Styled.gnb_itm} onClick={()=>{
-                                            navigate('/order');
+                                            navigate('/order/All');
                                             dispatch(displayPath('order'))
                                             }}>
               <div className={Styled.containerBtn}>
@@ -67,24 +66,15 @@ export const Navbar = () => {
               </div>
             </li>
             <li className={Styled.gnb_itm} onClick={()=>{
-                                            navigate('/user');
-                                            dispatch(displayPath('user'))
+                                            navigate('/review');
+                                            dispatch(displayPath('review'))
                                             }}>
               <div className={Styled.containerBtn}>
-                <img src={process.env.PUBLIC_URL + '/navicon/user.png'} alt='user'/>
-                <span>USER</span>
+                <img src={process.env.PUBLIC_URL + '/navicon/review.png'} alt='review'/>
+                <span>Review</span>
               </div>
-              <div className={Styled.user_sub_menu}>
-                <ul className={Styled.user_sub_menu_list}>
-                  {
-                    userMenu.map((a)=> {
-                      return (
-                        <li key={a} 
-                            className={Styled.user_sub_menu_item}
-                            onClick={(e)=>{e.stopPropagation(); navgate('/user/'+a)}}>{a.replace('_',' ')}</li>
-                      )
-                    })
-                  }
+              <div className={Styled.review_sub_menu}>
+                <ul className={Styled.review_sub_menu_list}>
                 </ul>
               </div>
             </li>

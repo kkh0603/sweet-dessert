@@ -9,7 +9,6 @@ import { RootState } from "../redux/store";
 export const MainRoute = () =>{
 
   let orderCategory = useSelector((state:RootState)=> state.operatePath.orderMenu)
-  let userCategory = useSelector((state:RootState)=> state.operatePath.userMenu)
 
   return (
     <React.Fragment>
@@ -27,16 +26,8 @@ export const MainRoute = () =>{
             }
         </Route>
         <Route path='/cart' element={<Cart/>}/> 
-        <Route path='/user/*'element={<React.Fragment>
-                                          <Outlet></Outlet>
+        <Route path='/review/*'element={<React.Fragment>
                                         </React.Fragment>}>
-          {
-            userCategory.map((a)=>{
-              return (
-                <Route key={a} path={a} element={<div>{a}</div>}/>
-              )
-            })
-          }
         </Route>
       </Routes>
     </React.Fragment>
