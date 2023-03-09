@@ -1,0 +1,26 @@
+
+.card_container{
+  padding-top: 10px;
+}
+
+.card_title{
+  padding-left: 10px;
+  font-size: 24px
+}
+
+.card_image_Area{
+  text-align: center;
+  width: inherit;
+  height: 180px;
+}
+
+.card_image{
+  width: 200px;
+}
+.card_cost{
+  padding-right: 10px;
+  text-align: right;
+}
+.card_btn_container{
+  padding-left: 10px;
+}
