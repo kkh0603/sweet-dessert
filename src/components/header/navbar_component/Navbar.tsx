@@ -4,7 +4,7 @@ import React, { useState, } from 'react'
 import { useNavigate, Outlet } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { displayPath } from '../../../redux/store_component/operate';
+import { displayPath, categoryUpdate } from '../../../redux/store_component/operate';
 import { RootState } from '../../../redux/store';
 
 export const Navbar = () => {
@@ -45,11 +45,14 @@ export const Navbar = () => {
               <div className={Styled.order_sub_menu}>
                 <ul className={Styled.order_sub_menu_list}>
                   {
-                    orderMenu.map((a)=> {
+                    orderMenu.map((a,i)=> {
                       return (
                         <li key={a} 
                             className={Styled.order_sub_menu_item} 
-                            onClick={(e)=>{e.stopPropagation(); navgate('/order/'+a)}}>{a}</li>
+                            onClick={(e)=>{e.stopPropagation(); 
+                              navgate('/order/'+a);
+                              dispatch(categoryUpdate(i))
+                            }}>{a}</li>
                       )
                     })
                   }

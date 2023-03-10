@@ -4,6 +4,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialOperatePathSlice = {
   orderMenu : ['All', 'Pudding', 'Macaroon'],
   displayPath : [''],
+  category : 0
 }
 
 const operatePathSlice = createSlice({
@@ -14,8 +15,11 @@ const operatePathSlice = createSlice({
       state.displayPath = []
       state.displayPath.push(action.payload);
     },
+    categoryUpdate (state, action:PayloadAction<number>) {
+      state.category = action.payload
+    }
   }
 })
 
-export const { displayPath } = operatePathSlice.actions
+export const { displayPath, categoryUpdate } = operatePathSlice.actions
 export default operatePathSlice.reducer

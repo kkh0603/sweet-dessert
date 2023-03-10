@@ -1,14 +1,13 @@
 /* eslint-disable */
 import { configureStore } from '@reduxjs/toolkit';
 import operateReducer from './store_component/operate'
-import cardSlice from './store_component/cart';
-
+import cardsReducer from './store_component/order';
 
 
 export const store = configureStore ({
   reducer: { 
     operatePath : operateReducer,
-    cards : cardSlice
+    cards : cardsReducer
   }
 })
 

@@ -2,6 +2,7 @@
 .order_contents{
   position: relative;
   width: 900px;
+  height: auto;
   margin: 0px auto;
 }
 
@@ -32,17 +33,13 @@
 
 
 .order_pagenation{
+  display: block;
   position: relative;
-  
-  
   width: 300px;
-  margin: 0px auto;
 }
 
 .carousel{
-  display: inline-block;
   position: relative;
-
   margin-left: 30px;
   margin-right: 30px;
 }
