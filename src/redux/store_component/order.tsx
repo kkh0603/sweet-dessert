@@ -6,7 +6,8 @@ const initialOrderSlice = {
   items : {
     type : [{
       no : 0,
-      submenu : 'All'
+      submenu : 'All',
+      item : [{}]
     },
     {
       no : 1,
