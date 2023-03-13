@@ -17,9 +17,6 @@ export const Order = () => {
   if (orderItem[categoryNo].no !== 0){
     itemList[subMenu] = item
     console.log(itemList)
-  } else if (orderItem[categoryNo].no === 0) {
-    itemList[subMenu] = item
-    console.log(itemList)
   }
 
   
