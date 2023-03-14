@@ -1,13 +1,9 @@
 import React from "react";
 import Styled from "./card.module.css"
+import { CardProps } from "../../../../redux/store_component/order";
 
 
-// type CardProps = {
-
-// }
-
-
-export const Card = () => {
+export const Card = ({ itemName, itemInfor } : CardProps )=> {
 
 
 
@@ -15,12 +11,10 @@ export const Card = () => {
     <React.Fragment>
       <div className={Styled.card_container}>
         <h2 className={Styled.card_title}>
-          { 
-            
-          }
+          { `${itemInfor.pName.toUpperCase()} ${itemName.toUpperCase()}` }
         </h2>
         <div className={Styled.card_image_Area}>
-          <img  className={Styled.card_image} src={process.env.PUBLIC_URL + '/item/pudding/custard.png'} alt="in"/>
+          <img  className={Styled.card_image} src={process.env.PUBLIC_URL + `/item/${itemName}/${itemInfor.pName}.png`} alt="in"/>
         </div>
         <div className={Styled.card_cost}>
           <span>₩</span>

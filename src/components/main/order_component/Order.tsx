@@ -9,30 +9,35 @@ export const Order = () => {
 
   
   const cardList = useSelector((state : RootState) => state.cards)
+  const allCheck : boolean = Object.keys(cardList.itemList).length === 1 ? true : false
 
-  console.log(cardList.itemList)
-  console.log(cardList.itemKeys)
-  console.log(cardList.itemValues)
-
+  
 
   return (
     <React.Fragment>
       <div className={Styled.order_contents}>
 
         <div className={Styled.order_items_list}>
-          <div className={Styled.order_item}> <Card  /> </div>
+          {/* <div className={Styled.order_item}> <Card/> </div>
           <div className={Styled.order_item}> 상품 2 </div>
           <div className={Styled.order_item}> 상품 3 </div>
-          <div className={Styled.order_item}> 상품 4 </div>
+          <div className={Styled.order_item}> 상품 4 </div> */}
+
+          {
+            allCheck === true ? (
+              cardList.itemList[`${cardList.itemKeys}`].map((a: { id: number; pName: string; price: number; }, i: React.Key | null | undefined) => {
+                let propTitle : string = cardList.itemKeys.toString();
+                // console.log(a)
+                return (
+                  <div key={i} className={Styled.order_item}> 
+                    <Card itemName={propTitle} itemInfor={a}/>
+                  </div>
+                )
+              })
+            ) : null
+          }
+
         </div>
-        {/* {
-          itemList.map((a,i) =>{
-            console.log(a)
-            return(
-              <div key={i}></div>
-            )
-          })
-        } */}
         <div className={Styled.order_pagenation}>
           <div className={`${Styled.carousel} ${Styled.carousel_left}`}> {"<"} </div>
           <div className={`${Styled.carousel} ${Styled.carousel_no}`}> 1,2,3,4,5,6 </div>
