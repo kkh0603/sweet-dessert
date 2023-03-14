@@ -1,8 +1,12 @@
 /* eslint-disable */
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+const itemTypes : {[key:string]:Array<object>}  = {}
 
 const initialOrderSlice = {
-  count : 0,
+  itemList : itemTypes,
+  itemKeys : [""],
+  itemValues : [{}],
   items : {
     type : [{
       no : 0,
@@ -69,8 +73,27 @@ const orderSlice = createSlice({
   name : 'card',
   initialState : initialOrderSlice,
   reducers : {
-
+    itemListSet (state, action:PayloadAction<number>){
+      state.itemList = {}
+      if(action.payload !== 0) {
+        let itemKey = state.items.type[action.payload].submenu.toString()
+        let itemValue = state.items.type[action.payload].item
+        state.itemList[itemKey] = itemValue
+        state.itemKeys = Object.keys(state.itemList)
+        state.itemValues = Object.values(state.itemList)
+      }
+      else if(action.payload === 0) {
+        for (let i = 1; i< state.items.type.length; i++) {
+          let itemKey = state.items.type[i].submenu.toString()
+          let itemValue = state.items.type[i].item 
+          state.itemList[itemKey] = itemValue
+          state.itemKeys = Object.keys(state.itemList)
+          state.itemValues = Object.values(state.itemList)
+        }
+      }
+    }
   }
 })
 
+export const { itemListSet } = orderSlice.actions
 export default orderSlice.reducer

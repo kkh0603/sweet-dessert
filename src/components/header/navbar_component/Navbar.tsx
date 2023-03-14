@@ -6,6 +6,7 @@ import { useNavigate, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { displayPath, categoryUpdate } from '../../../redux/store_component/operate';
 import { RootState } from '../../../redux/store';
+import { itemListSet } from '../../../redux/store_component/order';
 
 export const Navbar = () => {
   const navgate = useNavigate()
@@ -51,7 +52,8 @@ export const Navbar = () => {
                             className={Styled.order_sub_menu_item} 
                             onClick={(e)=>{e.stopPropagation(); 
                               navgate('/order/'+a);
-                              dispatch(categoryUpdate(i))
+                              dispatch(itemListSet(i))
+                              dispatch(categoryUpdate(i));
                             }}>{a}</li>
                       )
                     })

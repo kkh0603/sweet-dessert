@@ -2,7 +2,14 @@ import React from "react";
 import Styled from "./card.module.css"
 
 
+// type CardProps = {
+
+// }
+
+
 export const Card = () => {
+
+
 
   return (
     <React.Fragment>
