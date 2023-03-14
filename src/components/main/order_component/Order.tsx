@@ -18,11 +18,6 @@ export const Order = () => {
       <div className={Styled.order_contents}>
 
         <div className={Styled.order_items_list}>
-          {/* <div className={Styled.order_item}> <Card/> </div>
-          <div className={Styled.order_item}> 상품 2 </div>
-          <div className={Styled.order_item}> 상품 3 </div>
-          <div className={Styled.order_item}> 상품 4 </div> */}
-
           {
             allCheck === true ? (
               cardList.itemList[`${cardList.itemKeys}`].map((a: { id: number; pName: string; price: number; }, i: React.Key | null | undefined) => {
