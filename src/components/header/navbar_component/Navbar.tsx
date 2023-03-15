@@ -36,7 +36,7 @@ export const Navbar = () => {
               </div>
             </li>
             <li className={Styled.gnb_itm} onClick={()=>{
-                                            navigate('/order/All');
+                                            navigate('/order/pudding');
                                             dispatch(displayPath('order'))
                                             }}>
               <div className={Styled.containerBtn}>
@@ -45,19 +45,6 @@ export const Navbar = () => {
               </div>
               <div className={Styled.order_sub_menu}>
                 <ul className={Styled.order_sub_menu_list}>
-                  {
-                    orderMenu.map((a,i)=> {
-                      return (
-                        <li key={a} 
-                            className={Styled.order_sub_menu_item} 
-                            onClick={(e)=>{e.stopPropagation(); 
-                              navgate('/order/'+a);
-                              dispatch(itemListSet(i))
-                              dispatch(categoryUpdate(i));
-                            }}>{a}</li>
-                      )
-                    })
-                  }
                 </ul>
               </div>
             </li>

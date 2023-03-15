@@ -9,7 +9,6 @@ export const Order = () => {
 
   
   const cardList = useSelector((state : RootState) => state.cards)
-  const allCheck : boolean = Object.keys(cardList.itemList).length === 1 ? true : false
 
 
   return (
@@ -18,27 +17,6 @@ export const Order = () => {
 
         <div className={Styled.order_items_list}>
           {
-            allCheck === true ? (
-              cardList.itemList[`${cardList.itemKeys}`].map((a: { id: number; pName: string; price: number; }, i: React.Key | null | undefined) => {
-                let propTitle : string = cardList.itemKeys.toString();
-                // console.log(a)
-                return (
-                  <div key={i} className={Styled.order_item}> 
-                    <Card itemName={propTitle} itemInfor={a}/>
-                  </div>
-                )
-              })
-            ) : (
-              cardList.itemKeys.map((a,i) => {
-                console.log(a)
-                console.log(i)
-                return (
-                  <div key={i}>
-                    {/* <Card/> */}
-                  </div>
-                )
-              })
-            )
           }
 
         </div>

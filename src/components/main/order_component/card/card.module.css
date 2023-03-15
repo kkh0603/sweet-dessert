@@ -5,7 +5,8 @@
 
 .card_title{
   padding-left: 10px;
-  font-size: 24px
+  font-size: 24px;
+  border-bottom: 3px solid black;
 }
 
 .card_image_Area{
