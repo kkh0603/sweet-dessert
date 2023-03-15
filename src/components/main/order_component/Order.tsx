@@ -11,7 +11,6 @@ export const Order = () => {
   const cardList = useSelector((state : RootState) => state.cards)
   const allCheck : boolean = Object.keys(cardList.itemList).length === 1 ? true : false
 
-  
 
   return (
     <React.Fragment>
@@ -29,7 +28,17 @@ export const Order = () => {
                   </div>
                 )
               })
-            ) : null
+            ) : (
+              cardList.itemKeys.map((a,i) => {
+                console.log(a)
+                console.log(i)
+                return (
+                  <div key={i}>
+                    {/* <Card/> */}
+                  </div>
+                )
+              })
+            )
           }
 
         </div>
