@@ -2,7 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { stat } from 'fs';
 
-interface standardItem {
+export interface standardItem {
     id : number,
     pName : string,
     price : number,

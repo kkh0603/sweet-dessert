@@ -1,8 +1,9 @@
 import React from "react";
 import Styled from "./card.module.css"
+import { standardItem } from '../../../../redux/store_component/order';
 
 
-export const Card = ( )=> {
+export const Card = (cardItemInfor: any)=> {
 
   let a = 123
 
