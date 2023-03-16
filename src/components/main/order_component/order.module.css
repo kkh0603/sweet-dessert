@@ -18,7 +18,7 @@
   height: 700px;
   margin: 0px auto;
 
-  top: 50px;
+  top: 30px;
 }
 
 .order_item{
@@ -27,7 +27,7 @@
   width: 300px;
   height: 300px;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px gray;
+  /* box-shadow: 3px 3px 3px 3px gray; */
 }
 
 

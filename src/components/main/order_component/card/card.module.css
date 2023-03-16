@@ -20,8 +20,11 @@
   width: 200px;
 }
 .card_cost{
+  height: 25px;
   padding-right: 10px;
-  text-align: right;
+  display : flex;
+  justify-content : right;
+  align-items : center;
 }
 .card_btn_container{
   padding-left: 10px;
