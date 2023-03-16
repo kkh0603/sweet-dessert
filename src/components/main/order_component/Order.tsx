@@ -10,7 +10,6 @@ export const Order = () => {
 
   const [pageNo, setPageNo] = useState<number>(1)
   const cardList = useSelector((state : RootState) => state.cards)
-  // console.log(cardList.itemValues)
   
   useEffect(() => {
     setPageNo(0)
@@ -23,13 +22,16 @@ export const Order = () => {
         <div className={Styled.order_items_list}>
           { 
             cardList.itemValues.length !== 0 ? 
-            cardList.itemValues[pageNo].map((e,i) => {
-              console.log(e)
+            cardList.itemValues[pageNo].map((e ,i) => {
+              let selectItem : string= Object.keys(e)[0]
+              let itemMenu : string = e[selectItem].pName
+              let itemNo : number = e[selectItem].id
+              let itemPrice : number = e[selectItem].price
+
               return (
                 <div key={i} className={Styled.order_item}>
-                  <Card cardItemInfor={e}/>
+                  <Card id={itemNo} price={itemPrice} pName={itemMenu} itemType={selectItem}/>
                 </div>
-
               )
             }) :
             null
