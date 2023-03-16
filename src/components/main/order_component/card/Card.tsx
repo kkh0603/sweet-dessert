@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import Styled from "./card.module.css"
 import { standardItem } from '../../../../redux/store_component/order';
@@ -8,7 +9,6 @@ interface CardItem extends standardItem {
 
 export const Card = ({id, pName, price, itemType}: CardItem)=> {
 
-  let a = 123
   return (
     <React.Fragment>
       <div className={Styled.card_container}>

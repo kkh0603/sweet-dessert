@@ -3,7 +3,6 @@ import Styled from './order.module.css'
 import { Card } from "./card/Card";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
-import { standardItem } from "../../../redux/store_component/order";
 
 
 export const Order = () => {
