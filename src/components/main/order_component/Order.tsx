@@ -14,6 +14,7 @@ export const Order = () => {
     setPageNo(0)
   },[])
   
+
   return (
     <React.Fragment>
       <div className={Styled.order_contents}>
@@ -45,8 +46,18 @@ export const Order = () => {
         </div>
         <div className={Styled.order_pagenation}>
           {
+            cardList.itemValues.map((e, i) => {
+              return (
+                
+                pageNo === i ? (
+                  <span key={i} className={Styled.pageNum }
+                        style={{color:'gray', fontWeight:'bold'}}> ● </span>
+                ) : (<span key={i} className={Styled.pageNum} 
+                        style={{color:"rgba(189, 189, 189, 0.454)"}}> ● </span>)
+                
+              )
+            })
           }
-          <div className={`${Styled.carousel} ${Styled.carousel_no}`}> 1,2,3,4,5,6 </div>
         </div>
       </div>
     </React.Fragment>

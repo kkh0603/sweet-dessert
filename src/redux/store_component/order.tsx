@@ -48,6 +48,56 @@ const initialOrderSlice : CardState = {
         id : 4,
         pName : 'sesame',
         price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
+      },
+      {
+        id : 4,
+        pName : 'sesame',
+        price : 5000,
       }]
   }
 }
