@@ -46,7 +46,6 @@ export const Order = () => {
         <div className={Styled.order_pagenation}>
           {
           }
-          <div className={`${Styled.carousel} ${Styled.carousel_no}`}> 1,2,3,4,5,6 </div>
         </div>
       </div>
     </React.Fragment>
