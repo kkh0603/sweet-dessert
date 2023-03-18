@@ -19,6 +19,10 @@ export const Order = () => {
       <div className={Styled.order_contents}>
 
         <div className={Styled.order_items_list}>
+          <div className={`${Styled.carousel} ${Styled.carousel_left}`}
+            style={ pageNo === 0 ? { display : 'none'} : {}}
+            onClick={()=>{ if (pageNo > 0) setPageNo(pageNo - 1)}}> {"<"} 
+          </div>
           { 
             cardList.itemValues.length !== 0 ? 
             cardList.itemValues[pageNo].map((e ,i) => {
@@ -26,25 +30,23 @@ export const Order = () => {
               let itemMenu : string = e[selectItem].pName
               let itemNo : number = e[selectItem].id
               let itemPrice : number = e[selectItem].price
-
               return (
                 <div key={i} className={Styled.order_item}>
                   <Card id={itemNo} price={itemPrice} pName={itemMenu} itemType={selectItem}/>
                 </div>
               )
-            }) :
-            null
+            }) : null 
           }
+          <div className={`${Styled.carousel} ${Styled.carousel_right}`}
+            style={ pageNo === cardList.itemValues.length-1 ? { display : 'none'} : {}}
+            onClick={()=>{ if (pageNo < cardList.itemValues.length-1) setPageNo(pageNo + 1)}}> {">"} 
+          </div>
 
         </div>
         <div className={Styled.order_pagenation}>
-          <div className={`${Styled.carousel} ${Styled.carousel_left}`}
-            onClick={()=>{ if (pageNo > 0) setPageNo(pageNo - 1)}}> {"<"} </div>
           {
           }
           <div className={`${Styled.carousel} ${Styled.carousel_no}`}> 1,2,3,4,5,6 </div>
-          <div className={`${Styled.carousel} ${Styled.carousel_right}`}
-            onClick={()=>{ if (pageNo < cardList.itemValues.length-1) setPageNo(pageNo + 1)}}> {">"} </div>
         </div>
       </div>
     </React.Fragment>

@@ -12,7 +12,7 @@
   position: relative;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: left;
 
   width: 700px;
   height: 700px;
@@ -30,15 +30,29 @@
   /* box-shadow: 3px 3px 3px 3px gray; */
 }
 
-
-.order_pagenation{
-  display: block;
-  position: relative;
-  width: 300px;
+.carousel_left{
+  position: absolute;
+  width: 90px;
+  top: 330px;
+  left: -40px;
+  color:  rgba(112, 112, 112, 0.481);
+  font-size: 40px;
+  transition: 0.3s;
+}
+.carousel_right{
+  width: 90px;
+  position: absolute;
+  top: 330px;
+  left: 710px;
+  color: rgba(112, 112, 112, 0.481);
+  font-size: 40px;
+  transition: 0.3s;
+  transform-origin: center center;
+}
+.carousel_left:hover{
+  transform: translate(-10px, 0px);
 }
 
-.carousel{
-  position: relative;
-  margin-left: 30px;
-  margin-right: 30px;
+.carousel_right:hover{
+  transform: translate(10px, 0px);
 }
