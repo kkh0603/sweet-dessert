@@ -1,11 +1,11 @@
 /* eslint-disable */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { stat } from 'fs';
 
 export interface standardItem {
-    id : number,
+    id : string,
     pName : string,
     price : number,
+    count : number,
 }
 export interface CardState {
   itemKeys : Array<string>,
@@ -25,79 +25,94 @@ const initialOrderSlice : CardState = {
   items : {
       subMenu : 'pudding',
       item : [{
-        id : 0,
+        id : 'p00',
         pName : 'custard',
         price : 5000,
+        count : 0,
       },
       {
-        id : 1,
+        id : 'p01',
         pName : 'chocolate',
         price : 5500,
+        count : 0,
       },
       {
-        id : 2,
+        id : 'p02',
         pName : 'greentea',
         price : 4300,
+        count : 0,
       },
       {
-        id : 3,
+        id : 'p03',
         pName : 'milk',
         price : 4200,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p04',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p05',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p06',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p07',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p08',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p09',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p10',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p11',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p12',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p13',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       },
       {
-        id : 4,
+        id : 'p14',
         pName : 'sesame',
         price : 5000,
+        count : 0,
       }]
   }
 }
@@ -120,9 +135,23 @@ const orderSlice = createSlice({
         blockItem = state.itemTempArr.slice(i, i+arrIndex)
         state.itemValues.push(blockItem)
       }
+    },
+    itemIncrCounting (state, action:PayloadAction<string>){
+      let actionArr : Array<string> = action.payload.split(',')
+      let type : string = actionArr[0]
+      let pageNo : number = Number(actionArr[1])
+      let itemNo : number = Number(actionArr[2])
+      state.itemValues[pageNo][itemNo][type].count += 1
+    },
+    itemDecrCounting (state, action:PayloadAction<string>){
+      let actionArr : Array<string> = action.payload.split(',')
+      let type : string = actionArr[0]
+      let pageNo : number = Number(actionArr[1])
+      let itemNo : number = Number(actionArr[2])
+      state.itemValues[pageNo][itemNo][type].count -= 1
     }
   }
 })
 
-export const { itemListSet } = orderSlice.actions
+export const { itemListSet, itemIncrCounting, itemDecrCounting} = orderSlice.actions
 export default orderSlice.reducer

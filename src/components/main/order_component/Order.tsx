@@ -7,9 +7,9 @@ import { RootState } from '../../../redux/store';
 
 export const Order = () => {
 
+  
   const [pageNo, setPageNo] = useState<number>(1)
   const cardList = useSelector((state : RootState) => state.cards)
-  
   useEffect(() => {
     setPageNo(0)
   },[])
@@ -29,11 +29,12 @@ export const Order = () => {
             cardList.itemValues[pageNo].map((e ,i) => {
               let selectItem : string= Object.keys(e)[0]
               let itemMenu : string = e[selectItem].pName
-              let itemNo : number = e[selectItem].id
+              let itemNo : string = e[selectItem].id
               let itemPrice : number = e[selectItem].price
+              let itemCount : number = e[selectItem].count
               return (
                 <div key={i} className={Styled.order_item}>
-                  <Card id={itemNo} price={itemPrice} pName={itemMenu} itemType={selectItem}/>
+                  <Card id={itemNo} price={itemPrice} pName={itemMenu} itemType={selectItem} count={itemCount} pageNum={pageNo} itemNum={i}/>
                 </div>
               )
             }) : null 

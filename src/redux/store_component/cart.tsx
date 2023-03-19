@@ -1,19 +1,21 @@
 /* eslint-disable */
 import { createSlice } from "@reduxjs/toolkit";
+import { standardItem } from './order';
 
-export interface CartProps {
-  paymentInfor : {
-    pNmae : string,
-    count : number,
-    price : number,
-    total : number,
-  },
-  deliveryInfor : {
-    location : string,
-    
-  }
+export interface cartListState {
+  cartList : {[key:string] :standardItem}[]
 }
 
-const initialCardSlice = {
+const initialCartSlice : cartListState = {
+  cartList : []
+}
 
-} 
+const cartSlice = createSlice({
+  name : 'cart',
+  initialState : initialCartSlice,
+  reducers : {
+
+  }
+})
+
+export default cartSlice.reducer
