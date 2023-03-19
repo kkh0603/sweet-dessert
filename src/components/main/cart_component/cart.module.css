@@ -3,10 +3,10 @@
 }
 
 .cart_table_area{
-  width: 1130px;
+  width: 900px;
   height: 500px;
   position: relative;
-  top: 100px;
+  top: 50px;
 
   overflow: scroll;
 
@@ -29,7 +29,7 @@
 }
 
 .cart_table{
-  width: 900px;
+  width: 750px;
   margin: 5px auto;
 }
 

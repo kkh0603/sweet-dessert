@@ -2,7 +2,9 @@
 import React, {useState} from "react";
 import Styled from "./card.module.css"
 import { itemDecrCounting, itemIncrCounting, standardItem } from '../../../../redux/store_component/order';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../../redux/store';
+import { cartAdd } from "../../../../redux/store_component/cart";
 
 interface CardItem extends standardItem {
   itemType: string;
@@ -13,14 +15,12 @@ interface AddCardItem extends CardItem {
   itemNum : number,
 }
 
-
-
 export const Card = ({ pName, price, itemType, count, pageNum, itemNum}: AddCardItem)=> {
 
 
   const dispatch = useDispatch();
+  const itemList = useSelector((state:RootState) =>  state.cards.itemValues[pageNum][itemNum][itemType])
   let selectItemState : string = `${itemType},${pageNum},${itemNum}`;
-
   return (
     <React.Fragment>
       <div className={Styled.card_container}>
@@ -45,7 +45,9 @@ export const Card = ({ pName, price, itemType, count, pageNum, itemNum}: AddCard
                     count > 0 ? dispatch(itemDecrCounting(selectItemState)) : null}}>-</button>
         </div>
         <div>
-          <button className={Styled.card_get_cart}>get cart</button>
+          <button className={Styled.card_get_cart}
+                  onClick={()=>{dispatch(cartAdd(itemList))}}
+                  >get cart</button>
         </div>
       </div>
     </React.Fragment>
