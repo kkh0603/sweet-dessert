@@ -61,7 +61,7 @@ const orderSlice = createSlice({
   name : 'card',
   initialState : initialOrderSlice,
   reducers : {
-    itemListSet (state, action:PayloadAction<number>){
+    itemListSet (state){
       //초기화
       state.itemValues = []
       state.itemTempArr = []

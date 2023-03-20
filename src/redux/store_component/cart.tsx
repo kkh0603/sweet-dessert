@@ -3,11 +3,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { standardItem } from './order';
 
 export interface cartListState {
-  cartList : {[key:string] :standardItem}[]
+  cartList : {[key:string]: standardItem}
 }
 
 const initialCartSlice : cartListState = {
-  cartList : []
+  cartList : {}
 }
 
 const cartSlice = createSlice({
@@ -16,8 +16,8 @@ const cartSlice = createSlice({
   reducers : {
     //create
     cartAdd(state, action:PayloadAction<standardItem>) {
-      state.cartList.push({"s" : action.payload});
-      console.log(state.cartList[0])
+      let id = action.payload.id
+      state.cartList[id] = action.payload
     }
   }
 })

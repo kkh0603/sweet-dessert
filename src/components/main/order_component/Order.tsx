@@ -10,11 +10,11 @@ export const Order = () => {
   
   const [pageNo, setPageNo] = useState<number>(1)
   const cardList = useSelector((state : RootState) => state.cards)
-  useEffect(() => {
+  
+  useEffect(()=>{
     setPageNo(0)
   },[])
   
-
   return (
     <React.Fragment>
       <div className={Styled.order_contents}>
@@ -32,6 +32,7 @@ export const Order = () => {
               let itemNo : string = e[selectItem].id
               let itemPrice : number = e[selectItem].price
               let itemCount : number = e[selectItem].count
+
               return (
                 <div key={i} className={Styled.order_item}>
                   <Card id={itemNo} price={itemPrice} pName={itemMenu} itemType={selectItem} count={itemCount} pageNum={pageNo} itemNum={i}/>

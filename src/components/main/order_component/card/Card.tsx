@@ -46,8 +46,8 @@ export const Card = ({ pName, price, itemType, count, pageNum, itemNum}: AddCard
         </div>
         <div>
           <button className={Styled.card_get_cart}
-                  onClick={()=>{dispatch(cartAdd(itemList))}}
-                  >get cart</button>
+                  onClick={()=>{                               //수량 없음 메시지 필요
+                    count !== 0 ? dispatch(cartAdd(itemList)) : null}}>get cart</button>
         </div>
       </div>
     </React.Fragment>
