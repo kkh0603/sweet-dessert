@@ -13,7 +13,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: left;
-
+  
   width: 700px;
   height: 700px;
   margin: 0px auto;
@@ -23,7 +23,7 @@
 
 .order_item{
   border: 1px solid gray;
-  margin: 20px 20px;
+  margin: 23.5px 23.5px;
   width: 300px;
   height: 300px;
   border-radius: 10px;
@@ -55,4 +55,15 @@
 
 .carousel_right:hover{
   transform: translate(10px, 0px);
+}
+.order_pagenation{
+  position: relative;
+  height: 30px;
+  top: 30px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.pageNum{
+  padding: 0px 5px;
 }

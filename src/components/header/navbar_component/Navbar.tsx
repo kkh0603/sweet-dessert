@@ -38,7 +38,7 @@ export const Navbar = () => {
             <li className={Styled.gnb_itm} onClick={()=>{
                                             navigate('/order/pudding');
                                             dispatch(displayPath('order'));
-                                            dispatch(itemListSet(1));
+                                            dispatch(itemListSet());
                                             }}>
               <div className={Styled.containerBtn}>
                 <img src={process.env.PUBLIC_URL + '/navicon/order.png'} alt='oreder'/>

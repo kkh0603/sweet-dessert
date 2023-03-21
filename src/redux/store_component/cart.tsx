@@ -1,19 +1,32 @@
 /* eslint-disable */
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { standardItem } from './order';
 
-export interface CartProps {
-  paymentInfor : {
-    pNmae : string,
-    count : number,
-    price : number,
-    total : number,
-  },
-  deliveryInfor : {
-    location : string,
-    
-  }
+export interface cartListState {
+  cartList : {[key:string]: standardItem}
 }
 
-const initialCardSlice = {
+const initialCartSlice : cartListState = {
+  cartList : {}
+}
 
-} 
+const cartSlice = createSlice({
+  name : 'cart',
+  initialState : initialCartSlice,
+  reducers : {
+    //create
+    cartAdd(state, action:PayloadAction<standardItem>) {
+      let id = action.payload.id
+      state.cartList[id] = action.payload
+    },
+    cartIncreUpdate(state, action:PayloadAction<string>){
+      state.cartList[action.payload].count += 1
+    },
+    cartDecreUpdate(state, action:PayloadAction<string>){
+      state.cartList[action.payload].count -= 1
+    }
+  }
+})
+
+export const { cartAdd,cartIncreUpdate,cartDecreUpdate } = cartSlice.actions
+export default cartSlice.reducer

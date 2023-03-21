@@ -2,12 +2,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import operateReducer from './store_component/operate'
 import cardsReducer from './store_component/order';
+import cartReducer from './store_component/cart'
 
 
 export const store = configureStore ({
   reducer: { 
     operatePath : operateReducer,
-    cards : cardsReducer
+    cards : cardsReducer,
+    cart : cartReducer
   }
 })
 
