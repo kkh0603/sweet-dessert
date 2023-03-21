@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Styled from './cart.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
-import { cartDecreUpdate, cartIncreUpdate } from '../../../redux/store_component/cart';
+import { cartDecreUpdate, cartDelete, cartIncreUpdate } from '../../../redux/store_component/cart';
 
 export const Cart = () => {
 
   const dispatch = useDispatch();
   const itemList = useSelector((state: RootState) => state.cart.cartList)
   const itemValue = Object.values(itemList)
-  const [totalCost, setTotalCost] = useState<number>(0)
-  
+  let costPayment : number = useSelector((state: RootState) => state.cart.totalPayment)
+  itemValue.map((e) =>  {
+    costPayment += (e.count * e.price)
+  })
 
-  useEffect(()=>{
-
-  }, [dispatch]);
+  useEffect(()=>{}, [dispatch]);
 
   return(
     <React.Fragment>
@@ -51,12 +51,13 @@ export const Cart = () => {
                     </div>
                   </div>
                   <div className={Styled.cart_item_total}>
-                    <p> total </p>
                     <span className={Styled.item_KRW} >₩ : </span>
                     <span>{ e.count * e.price}</span>
                   </div>
-                  <div>
-                    <button className={Styled.cart_item_delete}>X</button>
+                  <div className={Styled.tiem_delete_area}>
+                    <button className={Styled.item_delete_btn}
+                            onClick={()=> {
+                              dispatch(cartDelete(e.id)) }}>X</button>
                   </div>
                 </div>
               )
@@ -65,8 +66,10 @@ export const Cart = () => {
           </div>
         </div>
         <div className={Styled.cart_payment_area}>
-        Payment {totalCost}
-
+          <span>Total Cost 
+            <p>₩ : {costPayment}</p>
+          </span>
+          <button className={Styled.payment_btn}>Payment</button>
         </div>
       </div>
     </React.Fragment>

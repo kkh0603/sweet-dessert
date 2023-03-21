@@ -86,18 +86,61 @@
   width: 15%;
 }
 
-.cart_item_delete{
+.tiem_delete_area{
   position: relative;
-  top: 0px;
-  left: 0px;
+  width: 7%;
+}
+
+.item_delete_btn{
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 25px;
+  border: none;
+  transition: 0.3s;
+}
+
+.item_delete_btn:hover{
+  background-color: gray;
+  color: white;
 }
 
 .item_KRW{
   position: relative;
-  left: -15px;
+  left: -7px;
+  text-align: left;
 }
 
 .cart_payment_area{
   position: relative;
-  top: 70px;
+  width: 700px;
+  left: 40px;
+  top: 30px;
+  display: flex;
+}
+
+.cart_payment_area span{
+  font-size: 20px;
+  margin-left: auto;
+}
+
+.cart_payment_area p{
+  border-top: 3px solid gray;
+  padding-top: 5px;
+  margin-left: auto;
+}
+.payment_btn{
+  margin-left: 30px;
+  width: 100px;
+  border: 2px solid rgba(128, 128, 128, 0.534);
+  border-radius: 40px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.payment_btn:hover{
+  border: 2px solid rgba(0, 128, 0, 0.695);
+  background: rgb(42, 157, 42);
+  color: white;
 }
