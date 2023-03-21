@@ -18,9 +18,15 @@ const cartSlice = createSlice({
     cartAdd(state, action:PayloadAction<standardItem>) {
       let id = action.payload.id
       state.cartList[id] = action.payload
+    },
+    cartIncreUpdate(state, action:PayloadAction<string>){
+      state.cartList[action.payload].count += 1
+    },
+    cartDecreUpdate(state, action:PayloadAction<string>){
+      state.cartList[action.payload].count -= 1
     }
   }
 })
 
-export const { cartAdd } = cartSlice.actions
+export const { cartAdd,cartIncreUpdate,cartDecreUpdate } = cartSlice.actions
 export default cartSlice.reducer
