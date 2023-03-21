@@ -10,9 +10,7 @@ export const Cart = () => {
   const itemList = useSelector((state: RootState) => state.cart.cartList)
   const itemValue = Object.values(itemList)
   let costPayment : number = useSelector((state: RootState) => state.cart.totalPayment)
-  itemValue.map((e) =>  {
-    costPayment += (e.count * e.price)
-  })
+  itemValue.map((e) => costPayment += (e.count * e.price))
 
   useEffect(()=>{}, [dispatch]);
 
