@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Styled from "./card.module.css"
 import { itemDecrCounting, itemIncrCounting, standardItem } from '../../../../redux/store_component/order';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,10 +17,11 @@ interface AddCardItem extends CardItem {
 
 export const Card = ({ pName, price, itemType, count, pageNum, itemNum}: AddCardItem)=> {
 
-
   const dispatch = useDispatch();
   const itemList = useSelector((state:RootState) =>  state.cards.itemValues[pageNum][itemNum][itemType])
   let selectItemState : string = `${itemType},${pageNum},${itemNum}`;
+
+  useEffect(()=>{},[dispatch])
   return (
     <React.Fragment>
       <div className={Styled.card_container}>
@@ -31,7 +32,7 @@ export const Card = ({ pName, price, itemType, count, pageNum, itemNum}: AddCard
           <img  className={Styled.card_image} src={process.env.PUBLIC_URL + `/item/${itemType}/${pName}.png`} alt="in"/>
         </div>
         <div className={Styled.card_cost}>
-          <span>₩ : {price}</span>
+          <span>₩ : {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
         </div>
         <div className={Styled.card_quantity}>
           <span className={Styled.card_item_count}>수량 : 

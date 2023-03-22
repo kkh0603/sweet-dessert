@@ -61,14 +61,19 @@ const orderSlice = createSlice({
   name : 'card',
   initialState : initialOrderSlice,
   reducers : {
-    itemListSet (state){
+    itemListSet (state, action:PayloadAction<Array<standardItem>>){
       //초기화
       state.itemValues = []
       state.itemTempArr = []
+
+      if (action.payload.length !== 0){
+        state.items.item.map((e)=> action.payload.map((a) => e.id === a.id ? e.count = a.count : null) )
+      }      
+
       //
       let arrIndex : number = 4
       let itemLength : number = state.items.item.length
-      state.items.item.map((a)=> {state.itemTempArr.push({[state.items.subMenu] : a})})
+      state.items.item.map((e)=> {state.itemTempArr.push({[state.items.subMenu] : e})})
       //실작업
       for (let i : number = 0; i <itemLength; i += arrIndex){
         let blockItem : {[key:string] :standardItem}[]

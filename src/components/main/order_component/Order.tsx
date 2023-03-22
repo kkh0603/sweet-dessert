@@ -7,14 +7,13 @@ import { RootState } from '../../../redux/store';
 
 export const Order = () => {
 
-  
   const [pageNo, setPageNo] = useState<number>(1)
   const cardList = useSelector((state : RootState) => state.cards)
   
   useEffect(()=>{
     setPageNo(0)
   },[])
-  
+
   return (
     <React.Fragment>
       <div className={Styled.order_contents}>

@@ -9,7 +9,7 @@ export const store = configureStore ({
   reducer: { 
     operatePath : operateReducer,
     cards : cardsReducer,
-    cart : cartReducer
+    cart : cartReducer,
   }
 })
 

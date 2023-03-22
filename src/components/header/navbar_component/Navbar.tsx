@@ -1,10 +1,10 @@
 /* eslint-disable */
 import Styled from './navbar.module.css';
-import React, { useState, } from 'react'
+import React, { useEffect, useState, } from 'react'
 import { useNavigate, Outlet } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { displayPath, categoryUpdate } from '../../../redux/store_component/operate';
+import { displayPath } from '../../../redux/store_component/operate';
 import { RootState } from '../../../redux/store';
 import { itemListSet } from '../../../redux/store_component/order';
 
@@ -17,9 +17,12 @@ export const Navbar = () => {
 
 
   const orderMenu = useSelector((state:RootState) => state.operatePath.orderMenu)
+  const cartItems = Object.values(useSelector((state:RootState) => state.cart.cartList))
 
   let navigate = useNavigate();
   let dispatch = useDispatch()
+
+  useEffect(()=>{},[dispatch])
 
   return (
     <React.Fragment>
@@ -38,7 +41,7 @@ export const Navbar = () => {
             <li className={Styled.gnb_itm} onClick={()=>{
                                             navigate('/order/pudding');
                                             dispatch(displayPath('order'));
-                                            dispatch(itemListSet());
+                                            dispatch(itemListSet(cartItems));
                                             }}>
               <div className={Styled.containerBtn}>
                 <img src={process.env.PUBLIC_URL + '/navicon/order.png'} alt='oreder'/>

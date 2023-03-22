@@ -50,7 +50,7 @@ export const Cart = () => {
                   </div>
                   <div className={Styled.cart_item_total}>
                     <span className={Styled.item_KRW} >₩ : </span>
-                    <span>{ e.count * e.price}</span>
+                    <span>{( e.count * e.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') }</span>
                   </div>
                   <div className={Styled.tiem_delete_area}>
                     <button className={Styled.item_delete_btn}
@@ -65,7 +65,7 @@ export const Cart = () => {
         </div>
         <div className={Styled.cart_payment_area}>
           <span>Total Cost 
-            <p>₩ : {costPayment}</p>
+            <p>₩ : {costPayment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
           </span>
           <button className={Styled.payment_btn}>Payment</button>
         </div>
