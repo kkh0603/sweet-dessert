@@ -5,6 +5,7 @@ import { Order } from '../components/main/order_component/Order';
 import { Cart } from '../components/main/cart_component/Cart';
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import { Review } from "../components/main/review_component/Review";
 
 export const MainRoute = () =>{
 
@@ -26,9 +27,7 @@ export const MainRoute = () =>{
             }
         </Route>
         <Route path='/cart' element={<Cart/>}/> 
-        <Route path='/review/*'element={<React.Fragment>
-                                        </React.Fragment>}>
-        </Route>
+        <Route path='/review/*'element={<Review/>}/>
       </Routes>
     </React.Fragment>
 
