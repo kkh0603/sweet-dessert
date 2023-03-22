@@ -32,9 +32,13 @@ const cartSlice = createSlice({
     //delete
     cartDelete(state, action:PayloadAction<string>){
       delete state.cartList[action.payload]
+    },
+    //clear
+    cartClear(state){
+      state.cartList = {}
     }
   }
 })
 
-export const { cartAdd,cartIncreUpdate,cartDecreUpdate,cartDelete, } = cartSlice.actions
+export const { cartAdd,cartIncreUpdate,cartDecreUpdate,cartDelete,cartClear } = cartSlice.actions
 export default cartSlice.reducer

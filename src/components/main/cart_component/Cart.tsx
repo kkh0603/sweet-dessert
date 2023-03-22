@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Styled from './cart.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
 import { cartDecreUpdate, cartDelete, cartIncreUpdate } from '../../../redux/store_component/cart';
+import { PayModal } from './modal/PayModal';
 
 export const Cart = () => {
 
@@ -11,9 +12,9 @@ export const Cart = () => {
   const itemValue = Object.values(itemList)
   let costPayment : number = useSelector((state: RootState) => state.cart.totalPayment)
   itemValue.map((e) => costPayment += (e.count * e.price))
+  const [paymentBtn, setPaymentBtn] = useState<boolean>(false)
 
   useEffect(()=>{}, [dispatch]);
-
   return(
     <React.Fragment>
       <div className={Styled.cart_contents}>
@@ -41,11 +42,11 @@ export const Cart = () => {
                     quntity : { e.count.toString().padStart(2,'0') }
                     <div>
                       <button className={Styled.cart_item_cntBtn}
-                              onClick={()=> {
-                                dispatch(cartIncreUpdate(e.id))}}>+</button>
+                              onClick={()=> 
+                                e.count < 99 ? dispatch(cartIncreUpdate(e.id)) : null }>+</button>
                       <button className={Styled.cart_item_cntBtn}
-                              onClick={()=>{
-                                dispatch(cartDecreUpdate(e.id))}}>-</button>
+                              onClick={()=>
+                                e.count > 0 ? dispatch(cartDecreUpdate(e.id)) : null }>-</button>
                     </div>
                   </div>
                   <div className={Styled.cart_item_total}>
@@ -67,9 +68,13 @@ export const Cart = () => {
           <span>Total Cost 
             <p>₩ : {costPayment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
           </span>
-          <button className={Styled.payment_btn}>Payment</button>
+          <button className={Styled.payment_btn}
+                  onClick={()=>setPaymentBtn(true)}>Payment</button>
         </div>
       </div>
+      {
+        paymentBtn === true ? <PayModal paymentBtn={paymentBtn} setPaymentBtn={setPaymentBtn}/> : null
+      }
     </React.Fragment>
   )
 }

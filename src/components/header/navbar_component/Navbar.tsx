@@ -1,6 +1,6 @@
 /* eslint-disable */
 import Styled from './navbar.module.css';
-import React, { useEffect, useState, } from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate, Outlet } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
