@@ -35,10 +35,10 @@ export const WriteModal = ({writeBtn, setWirteBtn}:modalPropsState) => {
       dispatch(addReview(modalObj))
       closeModal()
     } 
-    // else if (nick === '') {alert('Empty Nickname');
-    // } else if (pw === '') {alert('Empty Password');
-    // } else if (nick === '') {alert('Not Checked');
-    // } else if (nick === '') {alert('Empty TextBox')};
+    else if (nick === '') {alert('Empty Nickname');
+    } else if (pw === '') {alert('Empty Password');
+    } else if (nick === '') {alert('Not Checked');
+    } else if (nick === '') {alert('Empty TextBox')};
   }
 
   return(
@@ -55,7 +55,8 @@ export const WriteModal = ({writeBtn, setWirteBtn}:modalPropsState) => {
               <span>NickName : </span>
               <input className={Styled.modal_message}
                       onChange={(e)=> setNick((e.target.value).toString())}
-                      value={nick}/>
+                      value={nick}
+                      maxLength={8}/>
             </div>
             <div className={Styled.modal_input_area}>
               <span>Password : </span>

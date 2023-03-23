@@ -11,6 +11,7 @@ interface reviewType {
   modalData : reviewModalType,
   reviewObj : {[key:string]: reviewModalType}
   reviewList : {[key:string]: reviewModalType}[]
+  totalValue : number
 }
 
 const initialReviewSlice : reviewType = {
@@ -21,7 +22,8 @@ const initialReviewSlice : reviewType = {
     textbox : ''
   },
   reviewObj : {},
-  reviewList : []
+  reviewList : [],
+  totalValue : 0
 }
 
 const reviewSilce = createSlice({

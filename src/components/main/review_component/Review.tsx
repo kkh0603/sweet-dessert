@@ -5,13 +5,24 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/store';
 import { reviewModalType } from "../../../redux/store_component/review";
 import { ViewStar } from "./star/ViewStar";
+import { TotalStar } from './star/TotalStar';
+import { DeeleteModal } from "./deletModal/DeleteModal";
 
 export const Review = () => {
 
   const dispatch = useDispatch()
   const [writeBtn, setWirteBtn] = useState<boolean>(false)
   const modalList = useSelector((state : RootState)=> state.review.reviewList)
+  let totalStarValue = useSelector((state : RootState)=> state.review.totalValue)
+  const [reviewDelete, setReviewDelete] = useState<boolean>(false)
+  
+  if (modalList.length !== 0) (
+    modalList.map((e,i) => {
+      let objValue = Object.values(e)
+      totalStarValue += objValue[i].rating/modalList.length
+    }))
 
+    
   useEffect(() => {},[dispatch])
 
   return (
@@ -19,6 +30,12 @@ export const Review = () => {
       <div className={Styled.review_container}>
         <div className={Styled.review_bar_area}>
           <div className={Styled.review_rating_text}> Total Rating 
+            <span className={Styled.rating_tag}>
+              <TotalStar totalValue={totalStarValue}/> 
+            </span>
+            <span className={Styled.rating_value_display}>
+              {`(${totalStarValue.toFixed(2)})`}
+            </span>
           </div>
           <div className={Styled.review_btn_container}>
             <span className={Styled.review_wirte_area}>
@@ -42,8 +59,23 @@ export const Review = () => {
 
               return (
                 <div key={i} className={Styled.review_block_container}>
-                  <div>
-                    <ViewStar valueStar={0}/>
+                  <div className={Styled.list_infor}>
+                    <span className={Styled.item_title_nick}>Nickname : 
+                      <span>{oneItem.nickname}</span>
+                    </span>
+                    <span className={Styled.review_star_rating}>
+                      <ViewStar valueStar={oneItem.rating}/>
+                    </span>
+                    <span>
+                      <button className={Styled.review_delete_btn} 
+                              onClick={()=>{setReviewDelete(true)}} >X</button>
+                    </span>
+                  </div>
+                  <div className={Styled.list_text_area}>
+                    <textarea readOnly 
+                              className={Styled.text_box} 
+                              cols={70} rows={3}
+                              value={oneItem.textbox}></textarea>
                   </div>
                 </div>
               )
@@ -53,6 +85,9 @@ export const Review = () => {
       </div>
       {
         writeBtn === true ? <WriteModal writeBtn={writeBtn} setWirteBtn={setWirteBtn}/> : null
+      }
+      {
+        reviewDelete === true ? <DeeleteModal deleteBtn={reviewDelete} setDeleteBtn={setReviewDelete}/> : null
       }
     </React.Fragment>
   )

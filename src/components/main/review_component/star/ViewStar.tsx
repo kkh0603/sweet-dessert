@@ -10,27 +10,9 @@ export const ViewStar = ({valueStar}: starSate) => {
 
   return (
     <React.Fragment>
-      <div className={Styled.startRadio}>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
-        <label className={Styled.startRadio_box}>
-        </label>
+      <div className={Styled.startRating}>
+        <div style={{width:valueStar*40}} className={Styled.starRating_fill}>
+        </div>
       </div>
     </React.Fragment>
   )
