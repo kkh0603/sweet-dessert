@@ -13,7 +13,7 @@ export interface CardState {
   itemTempArr : {[key:string] :standardItem}[]
   items : {
     subMenu : string,
-    item : Array<standardItem>
+    item : standardItem[]
   }
 }
 
