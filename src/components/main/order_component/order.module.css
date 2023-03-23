@@ -13,11 +13,9 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: left;
-  
   width: 700px;
   height: 700px;
   margin: 0px auto;
-
   top: 30px;
 }
 

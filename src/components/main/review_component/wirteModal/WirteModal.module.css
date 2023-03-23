@@ -44,20 +44,58 @@
   top: 10px;
   left: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-flow: row wrap;
   border: 1px solid rgba(128, 128, 128, 0.596);
   border-radius: 20px;
 }
-
-.modal_message{
-  text-align: center;
-  font-size: 26px;
+.modal_input_area{
+  height: 40px;
+  text-align: middle;
 }
+.modal_input_area{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.modal_message{
+  width: 100px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.text_message{
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(128, 128, 128, 0.719);
+}
+
 .modal_answer_area{
   position: relative;
   top: 20px;
   left: 80px;
+}
+
+.star_area{
+  width: 400px;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.star_area_title{
+  margin-right: 110px;
+}
+
+.modal_coment_area{
+  width: 400px;
+  height: 70px;
+}
+
+.modal_text_box{
+  resize: none;
+  margin-left: 29px;
+  border-radius: 10px;
 }
 
 .modal_no_btn{

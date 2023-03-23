@@ -1,27 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import Styled from './review.module.css'
+import { WriteModal } from "./wirteModal/WriteModal";
 
 export const Review = () => {
+
+  const [writeBtn, setWirteBtn] = useState<boolean>(false)
+
   return (
     <React.Fragment>
       <div className={Styled.review_container}>
         <div className={Styled.review_bar_area}>
           <div className={Styled.review_rating_text}> Total Rating 
           </div>
-          <div className={Styled.review_fullstar_frame}>
-            <img className={Styled.review_fullstar_img}
-                  src={process.env.PUBLIC_URL + '/star.png'} 
-                  alt="fullstar" />
-          </div>
-          <div className={Styled.review_empty_frame}>
-            <img  className={Styled.review_empty_img}
-                  src={process.env.PUBLIC_URL + '/star.png'} 
-                  alt="enptystarr" />
+          <div className={Styled.review_btn_container}>
+            <span className={Styled.review_wirte_area}>
+              <button className={Styled.review_write_btn}
+                      onClick={()=>{setWirteBtn(true)}}>
+                <img className={Styled.icon} 
+                      src={process.env.PUBLIC_URL + '/navIcon/write.png'}
+                      alt={'write'}/>
+                        Write
+              </button>
+            </span>
+            <span className={Styled.review_rating_area}>
+            </span>
           </div>
         </div>
         <div className={Styled.review_history_area}>
         </div>
       </div>
+      {
+        writeBtn === true ? <WriteModal writeBtn={writeBtn} setWirteBtn={setWirteBtn}/> : null
+      }
     </React.Fragment>
   )
 }
