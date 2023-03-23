@@ -15,11 +15,15 @@ export const Review = () => {
   const modalList = useSelector((state : RootState)=> state.review.reviewList)
   let totalStarValue = useSelector((state : RootState)=> state.review.totalValue)
   const [reviewDelete, setReviewDelete] = useState<boolean>(false)
+  const [sendNick, setSendNick] = useState<string>('')
+  const [sendPw, setSendPw] = useState<string>('')
   
   if (modalList.length !== 0) (
     modalList.map((e,i) => {
       let objValue = Object.values(e)
-      totalStarValue += objValue[i].rating/modalList.length
+      return( 
+        totalStarValue += objValue[i].rating/modalList.length
+      )
     }))
 
     
@@ -68,7 +72,9 @@ export const Review = () => {
                     </span>
                     <span>
                       <button className={Styled.review_delete_btn} 
-                              onClick={()=>{setReviewDelete(true)}} >X</button>
+                              onClick={()=>{setReviewDelete(true);
+                                            setSendNick(oneItem.nickname);
+                                            setSendPw(oneItem.password)}} >X</button>
                     </span>
                   </div>
                   <div className={Styled.list_text_area}>
@@ -87,7 +93,10 @@ export const Review = () => {
         writeBtn === true ? <WriteModal writeBtn={writeBtn} setWirteBtn={setWirteBtn}/> : null
       }
       {
-        reviewDelete === true ? <DeeleteModal deleteBtn={reviewDelete} setDeleteBtn={setReviewDelete}/> : null
+        reviewDelete === true ? <DeeleteModal deleteBtn={reviewDelete} 
+                                              setDeleteBtn={setReviewDelete}
+                                              nickname={sendNick}
+                                              password={sendPw}/> : null
       }
     </React.Fragment>
   )

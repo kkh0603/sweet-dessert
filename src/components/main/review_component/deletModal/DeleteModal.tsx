@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Styled from './delete.module.css'
 
 interface modalPropsState {
   deleteBtn : boolean,
   setDeleteBtn :  React.Dispatch<React.SetStateAction<boolean>>
+  nickname : string,
+  password : string,
 }
 
-export const DeeleteModal = ({setDeleteBtn}:modalPropsState) => {
+export const DeeleteModal = ({setDeleteBtn, nickname, password}:modalPropsState) => {
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const closeModal = () => {
     setDeleteBtn(false);
   }
+
+  useEffect(()=>{},[dispatch])
+
+  console.log(nickname)
+  console.log(password)
 
   return(
     <React.Fragment>
@@ -26,6 +33,8 @@ export const DeeleteModal = ({setDeleteBtn}:modalPropsState) => {
           </div>
           <div className={Styled.modal_message_area}>
             <p className={Styled.modal_message}>
+              Are you sure you want to delete?
+            <input className={Styled.modal_input}/>
             </p>
           </div>
           <div className={Styled.modal_answer_area}>
