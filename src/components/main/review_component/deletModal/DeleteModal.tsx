@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { reviewDelete } from '../../../../redux/store_component/review';
 import Styled from './delete.module.css'
+import { RootState } from '../../../../redux/store';
 
 interface modalPropsState {
   deleteBtn : boolean,
@@ -24,7 +25,9 @@ export const DeeleteModal = ({setDeleteBtn, nickname, password}:modalPropsState)
   }
 
   const deleteComplete = () => {
-    password === deletePw ? reviewDelete(nickname+','+password) : alert('Wrong Number')
+    password === deletePw ? 
+      dispatch(reviewDelete(nickname + ',' + [password]))
+    : alert('Wrong Number')
   }
 
   useEffect(()=>{},[dispatch])

@@ -12,6 +12,7 @@ interface reviewType {
   reviewObj : {[key:string]: reviewModalType}
   reviewList : {[key:string]: reviewModalType}[]
   totalValue : number
+  finalComplete : boolean
 }
 
 const initialReviewSlice : reviewType = {
@@ -23,7 +24,8 @@ const initialReviewSlice : reviewType = {
   },
   reviewObj : {},
   reviewList : [],
-  totalValue : 0
+  totalValue : 0,
+  finalComplete : false
 }
 
 const reviewSilce = createSlice({
@@ -34,10 +36,17 @@ const reviewSilce = createSlice({
       let combiKey : string = (action.payload.nickname + action.payload.password)
       state.reviewObj[combiKey] = action.payload
       state.reviewList.push(state.reviewObj)
-    },//delete
-    reviewDelete(state, action:PayloadAction<string>){
-      state.reviewList.map((e) => e)
     },
+    reviewDelete(state, action:PayloadAction<string>){
+      const actionArr : Array<string> = action.payload.split(',')
+      const findIndex : number = Number(actionArr[0])
+      const keys : string = actionArr[1] + actionArr[2]
+      const findPassword : string = actionArr[2]
+      if (state.reviewList[findIndex][keys].password===findPassword) {
+        state.reviewList.splice(findIndex,1)
+        state.finalComplete = true
+      } 
+    }
   }
 })
 
