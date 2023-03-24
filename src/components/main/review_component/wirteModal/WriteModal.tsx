@@ -37,8 +37,8 @@ export const WriteModal = ({writeBtn, setWirteBtn}:modalPropsState) => {
     } 
     else if (nick === '') {alert('Empty Nickname');
     } else if (pw === '') {alert('Empty Password');
-    } else if (nick === '') {alert('Not Checked');
-    } else if (nick === '') {alert('Empty TextBox')};
+    } else if (ratingValue === 0) {alert('Not Checked');
+    } else if (longTxt === '') {alert('Empty TextBox')};
   }
 
   return(

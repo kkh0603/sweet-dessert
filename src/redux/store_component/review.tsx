@@ -34,9 +34,12 @@ const reviewSilce = createSlice({
       let combiKey : string = (action.payload.nickname + action.payload.password)
       state.reviewObj[combiKey] = action.payload
       state.reviewList.push(state.reviewObj)
-    }
+    },//delete
+    reviewDelete(state, action:PayloadAction<string>){
+      state.reviewList.map((e) => e)
+    },
   }
 })
 
-export const { addReview } = reviewSilce.actions
+export const { addReview, reviewDelete } = reviewSilce.actions
 export default reviewSilce.reducer

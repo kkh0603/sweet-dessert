@@ -73,7 +73,7 @@ export const Review = () => {
                     <span>
                       <button className={Styled.review_delete_btn} 
                               onClick={()=>{setReviewDelete(true);
-                                            setSendNick(oneItem.nickname);
+                                            setSendNick(i.toString() + ',' + oneItem.nickname);
                                             setSendPw(oneItem.password)}} >X</button>
                     </span>
                   </div>

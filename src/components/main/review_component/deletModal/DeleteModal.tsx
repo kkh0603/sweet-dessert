@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { reviewDelete } from '../../../../redux/store_component/review';
 import Styled from './delete.module.css'
 
 interface modalPropsState {
@@ -12,15 +13,21 @@ interface modalPropsState {
 export const DeeleteModal = ({setDeleteBtn, nickname, password}:modalPropsState) => {
 
   const dispatch = useDispatch()
+  const [deletePw, setDeletePw] = useState<string>('')
 
   const closeModal = () => {
     setDeleteBtn(false);
   }
 
-  useEffect(()=>{},[dispatch])
+  const pwChange = (e : React.ChangeEvent<HTMLInputElement>) =>{
+    setDeletePw(e.target.value)
+  }
 
-  console.log(nickname)
-  console.log(password)
+  const deleteComplete = () => {
+    password === deletePw ? reviewDelete(nickname+','+password) : alert('Wrong Number')
+  }
+
+  useEffect(()=>{},[dispatch])
 
   return(
     <React.Fragment>
@@ -34,14 +41,17 @@ export const DeeleteModal = ({setDeleteBtn, nickname, password}:modalPropsState)
           <div className={Styled.modal_message_area}>
             <p className={Styled.modal_message}>
               Are you sure you want to delete?
-            <input className={Styled.modal_input}/>
+            <input className={Styled.modal_input}
+                    onChange={(e)=>{pwChange(e)}}
+                    value={deletePw}/>
             </p>
           </div>
           <div className={Styled.modal_answer_area}>
             <button className={Styled.modal_no_btn}
                     onClick={()=>{closeModal()}}> No </button>
             <button className={Styled.modal_sure_btn}
-                    > Sure </button>
+                    onClick={()=>{deleteComplete()
+                                  closeModal()}}> Sure </button>
           </div>
         </div>
       </div>
