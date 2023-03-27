@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "//kkh0603.github.io/fpspa//home/static/css/main.5b646974.css",
+    "main.js": "//kkh0603.github.io/fpspa//home/static/js/main.967f22b0.js",
+    "static/js/787.438bab56.chunk.js": "//kkh0603.github.io/fpspa//home/static/js/787.438bab56.chunk.js",
+    "index.html": "//kkh0603.github.io/fpspa//home/index.html",
+    "main.5b646974.css.map": "//kkh0603.github.io/fpspa//home/static/css/main.5b646974.css.map",
+    "main.967f22b0.js.map": "//kkh0603.github.io/fpspa//home/static/js/main.967f22b0.js.map",
+    "787.438bab56.chunk.js.map": "//kkh0603.github.io/fpspa//home/static/js/787.438bab56.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b646974.css",
+    "static/js/main.967f22b0.js"
+  ]
+}
