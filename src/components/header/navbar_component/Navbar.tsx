@@ -34,7 +34,7 @@ export const Navbar = () => {
                                             dispatch(displayPath('home'))
                                             }}>
               <div className={Styled.containerBtn}>
-                <img src={process.env.PUBLIC_URL + `/navicon/home.png`} alt='Home'/>
+                <img src={process.env.PUBLIC_URL + `/navIcon/home.png`} alt='Home'/>
                 <span className='testSpan'>HOME</span>
               </div>
             </li>
@@ -44,7 +44,7 @@ export const Navbar = () => {
                                             dispatch(itemListSet(cartItems));
                                             }}>
               <div className={Styled.containerBtn}>
-                <img src={process.env.PUBLIC_URL + `/navicon/order.png`} alt='oreder'/>
+                <img src={process.env.PUBLIC_URL + `/navIcon/order.png`} alt='oreder'/>
                 <span>ORDER</span>
               </div>
               <div className={Styled.order_sub_menu}>
@@ -57,7 +57,7 @@ export const Navbar = () => {
                                             dispatch(displayPath('cart'))
                                             }}>
               <div className={Styled.containerBtn}>
-                <img src={process.env.PUBLIC_URL + `/navicon/cart.png`} alt='cart'/>
+                <img src={process.env.PUBLIC_URL + `/navIcon/cart.png`} alt='cart'/>
                 <span>CART</span>
               </div>
             </li>
@@ -66,7 +66,7 @@ export const Navbar = () => {
                                             dispatch(displayPath('review'))
                                             }}>
               <div className={Styled.containerBtn}>
-                <img src={process.env.PUBLIC_URL + `/navicon/review.png`} alt='review'/>
+                <img src={process.env.PUBLIC_URL + `/navIcon/review.png`} alt='review'/>
                 <span>Review</span>
               </div>
               <div className={Styled.review_sub_menu}>
